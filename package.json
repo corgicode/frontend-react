@@ -1,5 +1,5 @@
 {
-  "name": "create-react-app-redux",
+  "name": "codecorgi",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -22,5 +22,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://cra-redux-router-thunk.herokuapp.com"
+  "homepage": "https://codecorgi.co"
 }

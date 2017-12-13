@@ -1,6 +1,13 @@
-<p align="center"><a href="https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f"><img src="https://i.imgur.com/PATsTx2.png" title="View tutorial" alt="React, React Router, Redux and Redux Thunk" width="900"></a></p>
+# codecorgi
 
-[![Dependency Status](https://dependencyci.com/github/notrab/create-react-app-redux/badge)](https://dependencyci.com/github/notrab/create-react-app-redux)
+Frontend project for [codecorgi](codecorgi.co).
+
+Decided to open source it so that users can look at a non trivial codebase and follow development.
+
+Based on [Create React App Redux](https://github.com/notrab/create-react-app-redux.git), a minimalist React, React Router,
+Redux and Redux Thunk boilerplate.
+
+[![Dependency Status](https://dependencyci.com/github/corgicode/frontend-react/badge)](https://dependencyci.com/github/corgicode/frontend-react)
 
 * Tutorial: [Getting started with create-react-app, Redux, React Router & Redux Thunk](https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f)
 * Example: [View on Heroku](https://cra-redux-router-thunk.herokuapp.com/)
@@ -10,6 +17,13 @@
 ```bash
 git clone https://github.com/notrab/create-react-app-redux.git
 cd create-react-app-redux
-yarn
+npm i
 ```
 
+## Run Locally
+
+```
+npm start
+```
+
+You need to run a copy of the backend alongside and add all the env variables for it to work proper.
