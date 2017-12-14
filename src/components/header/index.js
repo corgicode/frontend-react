@@ -3,24 +3,15 @@ import { Link } from 'react-router-dom';
 import logoTextHover from '../../images/logo-text-hover.png';
 import logoText from '../../images/logo-text.png';
 import '../../styles/_header.scss';
+import Hoverimage from '../hoverImage';
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.mouseOver = this.mouseOver.bind(this);
-        this.mouseOut = this.mouseOut.bind(this);
         this.toggleVisibility = this.toggleVisibility.bind(this);
         this.state = {
-            hover: false,
             visible: false,
         };
-    }
-
-    mouseOver = () => {
-        this.setState({hover: true});
-    }
-    mouseOut() {
-        this.setState({hover: false});
     }
 
     toggleVisibility() {
@@ -41,8 +32,7 @@ class Header extends React.Component {
                             <li><a href="#"><i class="icon-s-dribbble"></i></a></li>*/}
                         </ul>
                         <Link className="navbar-brand" onClick={this.toggleVisibility} to="/">
-                            {this.state.hover && <img src={logoTextHover} width="168" className="logo" alt="codecorgi logo" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut} />}
-                            {!this.state.hover && <img src={logoText} width="168" className="logo" alt="codecorgi logo" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut} />}
+                            <Hoverimage width="168" className="logo" alt="codecorgi logo" image1={logoText} image2={logoTextHover} />
                         </Link>
                         <a className="navbar-toggle btn responsive-menu pull-right red-button" onClick={this.toggleVisibility}><i className="icon-menu-1"/></a>
                     </div>
