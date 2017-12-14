@@ -12,7 +12,7 @@ module.exports = {
                 {
                     loader: 'css-loader',
                     options: {
-                        modules: true,
+                        modules: false,
                         localIdentName: 'assets/[name]---[local]---[hash:base64:5]',
                     }
                 },
@@ -26,7 +26,6 @@ module.exports = {
         },
         { test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
         { test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/, loader: 'file-loader?name=assets/fonts/[name].[ext]' },
-        { test: /\.(gif|jpg|png)(\?[a-z0-9#=&.]+)?$/, loader: 'file-loader?name=assets/images/[name].[ext]' }
     ],
     }
 };
