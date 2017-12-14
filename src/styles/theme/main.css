@@ -71,7 +71,7 @@ body {
 main {
     background-color: #FFF;
 }
-main:before {
+/* main:before {
     content: "";
     position: fixed;
     top: 0;
@@ -82,7 +82,7 @@ main:before {
     background: #ffffff;
     transition: 0.4s ease-out 0.2s;
     transition-property: opacity, visibility;
-}
+} */
 main.js-reveal:before {
     opacity: 0;
     visibility: hidden;
