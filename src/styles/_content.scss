@@ -1,0 +1,111 @@
+
+.navbar-nav > li > a.red-button {
+            background-color: #fa6c65;
+            color: white;
+}
+a img {
+    max-width: 100%;
+}
+a:link, .btn {
+    cursor: pointer;
+}
+::selection {
+    background: #ff6970;
+    color: white;
+}
+#get-in-touch {
+    .btn {
+        bottom: 3px;
+        padding: 0 15px;
+    }
+}
+img {
+    max-width: 100%;
+}
+ul.bullets {
+    list-style-type: circle;
+}
+.padding-10 {
+    padding: 10px;
+}
+.margin-ver-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.text-black {
+    color: #292929;
+}
+.text-white {
+    color: white;
+}
+.content a {
+    border-bottom: 1px solid #73879C;
+}
+.challenge h2 {
+    color: #505e6d;
+}
+.white-bg {
+    background: white;
+}
+.challenge-list {
+    padding: 30px 0;
+    .challenge {
+        margin-bottom: 20px;
+        padding: 15px 20px;
+    }
+}
+.content.challenge {
+    h2 {
+        margin-top: 20px;
+    }
+    .tags {
+        margin: 10px 0;
+    }
+}
+.grey-box {
+    border: 1px solid #E6E9ED;
+    background: #F5F7FA;
+    color: black;
+    padding: 25px 35px;
+    border-top: none;
+    border-bottom-width: 2px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: 2em;
+    i {
+        color: #73879C;
+    }
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
+}
+.arrowed a {
+    text-decoration: underline;
+}
+.beta .newsletter, #newsletter {
+    button {
+        padding: 15px;
+    }
+    input {
+        height: 57px;
+    }
+}
+.forms label {
+    width: 100%;
+}
+a .icon {
+    margin-bottom: 0;
+}
+.round-borders {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.dark-shadow-text {
+    text-shadow: 3px 1px 0px #000000;
+}
+#work-on-ticket .inner {
+    padding-bottom: 80px;
+}

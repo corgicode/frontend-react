@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-loader": "^1.9.0",
     "gh-pages": "^1.1.0",
     "react-scripts": "^1.0.17"
   },
@@ -22,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy" : "npm run build&&gh-pages -d build"
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "homepage": "https://codecorgi.co"
 }
