@@ -1,0 +1,49 @@
+profile {
+  .header-container {
+    position: relative;
+    .options {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      text-align: right;
+      z-index: 2;
+    }
+  }
+  display: block;
+  h1 {
+    line-height: 70px;
+  }
+  .profile-image {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 50%;
+    @media(max-width: 420px) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .links {
+    margin: 20px 0;
+    ul {
+      text-align: center;
+    }
+    li {
+      display: inline;
+      padding: 0 10px;
+    }
+  }
+  .submissions {
+    margin: 50px 0 100px;
+    .challenge {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  }
+}
+.profile-edit {
+  .btn.remove {
+    // margin: 0;
+  }
+}
