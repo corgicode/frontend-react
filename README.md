@@ -1,5 +1,8 @@
 # codecorgi
 
+Checkout our progress on [![Waffle.io](https://badge.waffle.io/corgicode/frontend-react.svg?columns=all)](https://waffle.io/corgicode/frontend-react)
+
+
 Frontend project for [codecorgi](codecorgi.co).
 
 Decided to open source it so that users can look at a non trivial codebase and follow development.
