@@ -12,6 +12,8 @@ Redux and Redux Thunk boilerplate.
 
 [![Dependency Status](https://dependencyci.com/github/corgicode/frontend-react/badge)](https://dependencyci.com/github/corgicode/frontend-react)
 
+[![Build Status](https://circleci.com/gh/corgicode/frontend-react.svg?style=shield)](https://circleci.com/gh/corgicode/frontend-react)
+
 * Tutorial: [Getting started with create-react-app, Redux, React Router & Redux Thunk](https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f)
 * Example: [View on Heroku](https://cra-redux-router-thunk.herokuapp.com/)
 
