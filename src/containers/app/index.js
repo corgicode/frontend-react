@@ -8,10 +8,8 @@ import Footer from '../../components/footer';
 const App = () => (
     <div>
         <Header />
-        <main>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about-us" component={About} />
-        </main>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
         <Footer />
     </div>
 );
