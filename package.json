@@ -64,7 +64,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy": "npm run build&&gh-pages -d build"
+    "deploy": "npm run build && cp build/index.html build/404.html && gh-pages -d build"
   },
   "homepage": "https://codecorgi.co",
   "jest": {
