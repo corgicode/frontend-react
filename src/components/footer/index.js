@@ -3,6 +3,7 @@ import logoTextHover from '../../images/logo-text-hover.png';
 import logoText from '../../images/logo-text.png';
 import Hoverimage from '../hoverImage';
 import '../../styles/_footer.scss';
+import { Link } from 'react-router-dom';
 
 class Footer extends React.Component {
     render() {
@@ -12,15 +13,15 @@ class Footer extends React.Component {
                     <div className="row">
                         <div className="col-md-4 col-sm-6 inner">
                             <h4>About Us</h4>
-                            <a href="/about">
+                            <Link to="/about">
                                 <Hoverimage width="168" className="logo" alt="codecorgi logo" image1={logoText} image2={logoTextHover} />
-                            </a>
+                            </Link>
                             <p>
                                 Work through tickets/challenges like a real programmer does on the job.
                                 codecorgi provides simulation project management tickets for you
                                 to build real products and grow your developer portfolio.
                             </p>
-                            <a href="/about" className="txt-btn">About us</a>
+                            <Link to="/about" className="txt-btn">About us</Link>
                         </div>
                         <div className="col-md-4 hidden-md hidden-sm col-sm-6 inner">
                             {/* <h4>Latest works</h4>
@@ -61,9 +62,9 @@ class Footer extends React.Component {
                     <div className="container inner">
                         <p className="pull-left">© 2017 codecorgi. All rights reserved.</p>
                         <ul className="footer-menu pull-right">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/learning">Learning</a></li>
-                            <li><a href="/about">About</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/learning">Learning</Link></li>
+                            <li><Link to="/about">About</Link></li>
                             <li><a href="http://services.codecorgi.co/">Services</a></li>
                         </ul>
                     </div>
