@@ -8,7 +8,7 @@ class About extends React.Component {
     render() {
         return(
             <main>
-                <section id="hero" className="tint-bg img-bg-softer" style={{backgroundImage: `url(${patternBg})`}}>
+                <section id="hero" className="tint-bg img-bg-softer" style={{backgroundRepeat: 'repeat', backgroundImage: `url(${patternBg})`}}>
                     <div className="container inner">
                         <div className="row">
                             <div className="col-sm-10 aos-init aos-animate" data-aos="fade-up">
