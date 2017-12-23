@@ -2,7 +2,6 @@
 
 Checkout our progress on [![Waffle.io](https://badge.waffle.io/corgicode/frontend-react.svg?columns=all)](https://waffle.io/corgicode/frontend-react)
 
-
 Frontend project for [codecorgi](codecorgi.co).
 
 Decided to open source it so that users can look at a non trivial codebase and follow development.
@@ -15,13 +14,12 @@ Redux and Redux Thunk boilerplate.
 [![Build Status](https://circleci.com/gh/corgicode/frontend-react.svg?style=shield)](https://circleci.com/gh/corgicode/frontend-react)
 
 * Tutorial: [Getting started with create-react-app, Redux, React Router & Redux Thunk](https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f)
-* Example: [View on Heroku](https://cra-redux-router-thunk.herokuapp.com/)
 
 ## Installation
 
 ```bash
-git clone https://github.com/notrab/create-react-app-redux.git
-cd create-react-app-redux
+git clone git@github.com:corgicode/frontend-react.git frontend
+cd frontend
 npm i
 ```
 
