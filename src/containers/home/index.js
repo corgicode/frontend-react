@@ -42,10 +42,8 @@ class Home extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    count: state.counter.count,
-    isIncrementing: state.counter.isIncrementing,
-    isDecrementing: state.counter.isDecrementing
+const mapStateToProps = () => ({
+
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
