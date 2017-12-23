@@ -11,8 +11,11 @@ import './styles/main.scss';
 
 const target = document.querySelector('#root');
 
+// https://github.com/stonecircle/redux-json-api/pull/41
+// https://github.com/axios/axios#request-config
 store.dispatch(setAxiosConfig({
-    baseURL: 'http://localhost:9500/api',
+    baseURL: '/api',
+    withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
     },
@@ -21,9 +24,7 @@ store.dispatch(setAxiosConfig({
 render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <div>
-                <App />
-            </div>
+            <App />
         </ConnectedRouter>
     </Provider>,
     target

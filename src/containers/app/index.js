@@ -1,21 +1,41 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Home from '../home';
-import About from '../about';
-import e404 from '../404';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import Routes from '../../routes';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getProfile } from '../../modules/profile';
+import PropTypes from 'prop-types';
 
-const App = () => (
-    <div>
-        <Header />
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route component={e404} />
-        </Switch>
-        <Footer />
-    </div>
-);
+class App extends React.Component {
+    static propTypes = {
+        getProfile: PropTypes.func.isRequired,
+    }
 
-export default App;
+    componentWillMount() {
+        this.props.getProfile();
+    }
+
+    render() {
+        return(
+            <div>
+                <Header />
+                <Routes />
+                <Footer />
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    const { api } = state;
+    return {
+        api,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    getProfile,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
