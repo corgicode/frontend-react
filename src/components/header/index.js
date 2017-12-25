@@ -7,10 +7,15 @@ import Hoverimage from '../hoverImage';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import ReactRouterPropTypes from 'react-router-prop-types';
+import PropTypes from 'prop-types';
 
 class Header extends React.Component {
     static propTypes = {
         history: ReactRouterPropTypes.history.isRequired,
+        profile: PropTypes.shape({
+            authenticated: PropTypes.bool,
+            username: PropTypes.string,
+        }),
     }
 
     constructor(props) {
@@ -29,6 +34,8 @@ class Header extends React.Component {
     }
 
     render() {
+        const { authenticated, username } = this.props.profile;
+
         return (<header className="header">
             <div className="navbar">
                 <div className="navbar-header">
@@ -58,7 +65,8 @@ class Header extends React.Component {
                                     <Link to="/challenges">Challenges</Link>
                                 </li>
                                 <li>
-                                    <Link className="red-button" to="/app#!/signup" onClick={this.toggleVisibility}>Account</Link>
+                                    {!authenticated && <Link className="red-button" to="/signup" onClick={this.toggleVisibility}>Signup {username}</Link>}
+                                    {authenticated && <Link className="red-button" to="/profile" onClick={this.toggleVisibility}>Profile</Link>}
                                 </li>
                             </ul>
                         </div>
