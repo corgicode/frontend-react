@@ -13,6 +13,22 @@ class Home extends React.Component {
     static propTypes = {
     }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            submitted: false,
+        };
+        this.submitForm = this.submitForm.bind(this);
+    }
+
+    submitForm() {
+        this.setState({ submitted: true });
+        if (window && window.ga) {
+            window.ga('send', 'event', 'Newsletter', 'subscribe', 'Homepage');
+        }
+        this.refs.form.submit();
+    }
+
     render() {
         return (
             <main>
@@ -100,22 +116,28 @@ class Home extends React.Component {
                     <div className="container inner">
                         <div className="row">
                             <div className="col-sm-8 col-sm-offset-2 text-center">
-                                <header>
-                                    <h1>Codecorgi is in Beta!</h1>
-                                    <p>Sign up and receive updates in our progress</p>
-                                </header>
-                                <form id="newsletter" className="form-inline newsletter" role="form" action="//codecorgi.us15.list-manage.com/subscribe/post?u=8e17bb4ce74c59b458f46f84f&amp;id=7165cac077" method="post"  target="_blank" noValidate>
-                                    <label className="sr-only" htmlFor="exampleInputEmail">Email address</label>
-                                    <input type="email" name="EMAIL" className="form-control" placeholder="Enter your email address" />
-                                    <button type="submit" className="btn btn-large btn-submit">Subscribe</button>
-                                    <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
-                                        <input type="text" name="b_8e17bb4ce74c59b458f46f84f_7165cac077" tabIndex="-1" value="" />
-                                    </div>
-                                </form>
-                                <div className="thankyou hidden">
-                                    <h1>Thanks for subscribing!</h1>
-                                    <p>Check your email for a confirmation.</p>
+                                {!this.state.submitted &&
+                                <div>
+                                    <header>
+                                        <h1>Codecorgi is in Beta!</h1>
+                                        <p>Sign up and receive updates in our progress</p>
+                                    </header>
+                                    <form id="newsletter" ref="form" className="form-inline newsletter" role="form" action="//codecorgi.us15.list-manage.com/subscribe/post?u=8e17bb4ce74c59b458f46f84f&amp;id=7165cac077" method="post"  target="_blank" noValidate>
+                                        <label className="sr-only" htmlFor="exampleInputEmail">Email address</label>
+                                        <input type="email" name="EMAIL" className="form-control" placeholder="Enter your email address" />
+                                        <button type="submit" onClick={this.submitForm} className="btn btn-large btn-submit">Subscribe</button>
+                                        <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+                                            <input type="text" name="b_8e17bb4ce74c59b458f46f84f_7165cac077" tabIndex="-1" value="" />
+                                        </div>
+                                    </form>
                                 </div>
+                                }
+                                {this.state.submitted &&
+                                    <div className="thankyou">
+                                        <h1>Thanks for subscribing!</h1>
+                                        <p>Check your email for a confirmation.</p>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
