@@ -1,8 +1,12 @@
 import React from 'react';
 import Hoverimage from '../../components/hoverImage';
 import logo from '../../images/logo-large.png';
-import logoHover from '../../images/logo-large-hover.png';
-import patternBg from '../../images/pattern-background03.png';
+import logoHover from '../../assets/images/logo-large-hover.png';
+import patternBg from '../../assets/images/art/pattern-background03.png';
+import tereImg from '../../assets/images/team/tere.png';
+import davidImg from '../../assets/images/team/david.png';
+import corgiImg from '../../assets/images/team/corginson.png';
+import sydneyImg from '../../assets/images/team/sydney.png';
 
 class About extends React.Component {
     render() {
@@ -64,7 +68,7 @@ class About extends React.Component {
                             <div className="col-sm-6 inner-bottom-sm ">
                                 <figure className="member">
                                     <div className="icon-overlay icn-link">
-                                        <a><img src="/images/team/sydney.png" className="img-circle"/></a>
+                                        <a><img src={sydneyImg} className="img-circle"/></a>
                                     </div>
                                     <figcaption>
                                         <h2>
@@ -85,7 +89,7 @@ class About extends React.Component {
                             <div className="col-sm-6 inner-bottom-sm ">
                                 <figure className="member">
                                     <div className="icon-overlay icn-link">
-                                        <a><img src="/images/team/david.png" className="img-circle"/></a>
+                                        <a><img src={davidImg} className="img-circle"/></a>
                                     </div>
                                     <figcaption>
                                         <h2>
@@ -107,30 +111,7 @@ class About extends React.Component {
                             <div className="col-sm-6 inner-bottom-sm ">
                                 <figure className="member">
                                     <div className="icon-overlay icn-link">
-                                        <a><img src="/images/team/iva.png" alt="iva avatar" className="img-circle" /></a>
-                                        {/* <!-- http://www.iconninja.com/avatar-user-woman-girl-female-person-icon-7092 --> */}
-                                    </div>
-                                    <figcaption>
-                                        <h2>
-                                            Iva Žic
-                                            <span>UX Designer</span>
-                                        </h2>
-                                        <p>
-                                            UX Designer with a background in Graphic design,
-                                            10+ experience in empathizing with customers, and a
-                                            lifelong responsibility to do something valuable
-                                            for others.
-                                        </p>
-                                        <ul className="social">
-                                            <li><a href="https://www.linkedin.com/in/ivazickim/" target="_blank"><i className="icon-linkedin"/></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                            <div className="col-sm-6 inner-bottom-sm ">
-                                <figure className="member">
-                                    <div className="icon-overlay icn-link">
-                                        <a><img src="/images/team/tere.png" className="img-circle" /></a>
+                                        <a><img src={tereImg} className="img-circle" /></a>
                                     </div>
                                     <figcaption>
                                         <h2>
@@ -144,12 +125,10 @@ class About extends React.Component {
                                     </figcaption>
                                 </figure>
                             </div>
-                        </div>
-                        <div className="row inner-top-sm text-center">
                             <div className="col-sm-6 inner-bottom-sm ">
                                 <figure className="member">
                                     <div className="icon-overlay icn-link">
-                                        <a><img src="/images/team/corginson.png" className="img-circle" /></a>
+                                        <a><img src={corgiImg} className="img-circle" /></a>
                                     </div>
                                     <figcaption>
                                         <h2>
