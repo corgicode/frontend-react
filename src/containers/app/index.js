@@ -10,6 +10,11 @@ import PropTypes from 'prop-types';
 class App extends React.Component {
     static propTypes = {
         getProfile: PropTypes.func.isRequired,
+        profile: PropTypes.shape({
+            authenticated: PropTypes.bool,
+            name: PropTypes.string,
+            username: PropTypes.username,
+        }),
     }
 
     componentWillMount() {
@@ -17,9 +22,10 @@ class App extends React.Component {
     }
 
     render() {
+        const { profile } = this.props;
         return(
             <div>
-                <Header />
+                <Header profile={profile} />
                 <Routes />
                 <Footer />
             </div>
@@ -28,9 +34,13 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    const { api } = state;
+    const { profile } = state;
     return {
-        api,
+        profile: {
+            authenticated: profile.authenticated,
+            name: profile.name,
+            username: profile.username,
+        },
     };
 };
 
