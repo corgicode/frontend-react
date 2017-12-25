@@ -118,3 +118,29 @@ a .icon {
 #work-on-ticket .inner {
     padding-bottom: 80px;
 }
+.img-bg-softer {
+    background-repeat: repeat;
+}
+section.tall {
+    text-align: center;
+    min-height: 500px;
+    min-height: calc(90vh - 110px);
+    h1 {
+        font-size: 60px;
+        line-height: 115%;
+        &.main {
+            text-align: center;
+            margin-top: 24vh;
+        }
+        &.white-text {
+            color: white;
+            text-shadow: 4px 3px 5px black;
+        }
+    }
+    button {
+        font-size: 20px;
+    }
+}
+footer.footer {
+    margin-top: 0;
+}
