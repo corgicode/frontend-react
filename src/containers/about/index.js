@@ -7,11 +7,17 @@ import tereImg from '../../assets/images/team/tere.png';
 import davidImg from '../../assets/images/team/david.png';
 import corgiImg from '../../assets/images/team/corginson.png';
 import sydneyImg from '../../assets/images/team/sydney.png';
+import { Helmet } from 'react-helmet';
 
 class About extends React.Component {
     render() {
         return(
             <main>
+                <Helmet>
+                    <title>About Us - codecorgi</title>
+                    <link rel="canonical" href="https://codecorgi.co/about" />
+                    <meta name="description" content="codecorgi provides simulation project tickets so that junior programmers gain competitive abilities. Learn by doing projects applicable to the corporate world." />
+                </Helmet>
                 <section id="hero" className="tint-bg img-bg-softer" style={{backgroundRepeat: 'repeat', backgroundImage: `url(${patternBg})`}}>
                     <div className="container inner">
                         <div className="row">

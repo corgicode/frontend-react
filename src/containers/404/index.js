@@ -2,11 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import corgi404 from '../../assets/images/404corgi.png';
 import blueBg from '../../assets/images/blue-bg.jpg';
+import { Helmet } from 'react-helmet';
 
 class e404 extends React.Component {
     render() {
         return(
             <main>
+                <Helmet>
+                    <title>Page not found - codecorgi</title>
+                    <link rel="canonical" href="https://codecorgi.co/404" />
+                    <meta name="description" content="codecorgi provides simulation project tickets so that junior programmers gain competitive abilities. Learn by doing projects applicable to the corporate world." />
+                </Helmet>
                 <section id="hero" className="dark-bg img-bg img-bg-soft" style={{ backgroundImage: `url(${blueBg})` }}>
                     <div className="container inner-top-md inner-bottom-sm">
                         <div className="row">

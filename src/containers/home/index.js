@@ -8,6 +8,7 @@ import bgImage from '../../assets/images/art/pattern-background02.png';
 import purdyImage from '../../assets/images/homepage/purdy-mac.png';
 import formImage from '../../assets/images/homepage/3-submission-form.png';
 import blueBg from '../../assets/images/blue-bg.jpg';
+import { Helmet } from 'react-helmet';
 
 class Home extends React.Component {
     static propTypes = {
@@ -32,6 +33,11 @@ class Home extends React.Component {
     render() {
         return (
             <main>
+                <Helmet>
+                    <title>codecorgi</title>
+                    <link rel="canonical" href="https://codecorgi.co/" />
+                    <meta name="description" content="Work through tickets/challenges like a real programmer does on the job. Codecorgi provides simulation project management tickets for you to build real products and grow your developer portfolio." />
+                </Helmet>
                 <section className="tall" style={{ backgroundImage: `url(${heroImage})` }}>
                     <div className="container">
                         <h1 className="main white-text">Grow your developer profile</h1>
