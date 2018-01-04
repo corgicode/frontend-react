@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoTextHover from '../../images/logo-text-hover.png';
-import logoText from '../../images/logo-text.png';
+import logoTextHover from '../../assets/images/logo-text-hover.png';
+import logoText from '../../assets/images/logo-text.png';
 import '../../styles/_header.scss';
 import Hoverimage from '../hoverImage';
 import { connect } from 'react-redux';

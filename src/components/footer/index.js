@@ -1,6 +1,6 @@
 import React from 'react';
-import logoTextHover from '../../images/logo-text-hover.png';
-import logoText from '../../images/logo-text.png';
+import logoTextHover from '../../assets/images/logo-text-hover.png';
+import logoText from '../../assets/images/logo-text.png';
 import Hoverimage from '../hoverImage';
 import '../../styles/_footer.scss';
 import { Link } from 'react-router-dom';

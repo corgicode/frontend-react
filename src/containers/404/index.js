@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import corgi404 from '../../images/404corgi.png';
-import blueBg from '../../images/blue-bg.jpg';
+import corgi404 from '../../assets/images/404corgi.png';
+import blueBg from '../../assets/images/blue-bg.jpg';
 
 class e404 extends React.Component {
     render() {

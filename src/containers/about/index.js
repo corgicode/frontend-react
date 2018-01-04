@@ -1,6 +1,6 @@
 import React from 'react';
 import Hoverimage from '../../components/hoverImage';
-import logo from '../../images/logo-large.png';
+import logo from '../../assets/images/logo-large.png';
 import logoHover from '../../assets/images/logo-large-hover.png';
 import patternBg from '../../assets/images/art/pattern-background03.png';
 import tereImg from '../../assets/images/team/tere.png';
