@@ -34,7 +34,6 @@ class Profile extends React.Component {
         const { profile, self } = this.props;
         return(
             <div>
-                {this.state.loading && <h2>Loading...</h2>}
                 {!this.state.loading && this.props.profile && <ProfileComponent profile={profile} self={self} />}
                 {!this.state.loading && !this.props.profile && <E404 />}
             </div>);
