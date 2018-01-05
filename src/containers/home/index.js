@@ -38,7 +38,7 @@ class Home extends React.Component {
                     <link rel="canonical" href="https://codecorgi.co/" />
                     <meta name="description" content="Work through tickets/challenges like a real programmer does on the job. Codecorgi provides simulation project management tickets for you to build real products and grow your developer portfolio." />
                 </Helmet>
-                <section className="tall" style={{ backgroundImage: `url(${heroImage})` }}>
+                <section className="tall" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover' }}>
                     <div className="container">
                         <h1 className="main white-text">Grow your developer profile</h1>
                         <div className="fadeInDown-3">
