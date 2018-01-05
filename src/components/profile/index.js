@@ -19,7 +19,7 @@ class ProfileComponent extends React.Component {
                 <section className="tint-bg img-bg-softer" style={{ backgroundImage: `url(${bgImage})` }}>
                     <div className="container header-container">
                         {self && <div className="options">
-                            <Link className="btn" to="profile/edit">Edit</Link>
+                            <Link className="btn" to="/profile/edit">Edit</Link>
                             <Link className="btn" to="/api/auth/logout" target="_self">Logout</Link>
                         </div>}
                         <div className="row">
