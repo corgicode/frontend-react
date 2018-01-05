@@ -16,7 +16,7 @@ export function receiveProfile(profile, authenticated = true) {
 
 export function getProfile() {
     return (dispatch) => {
-        dispatch(readEndpoint('/profile')).then(response => {
+        dispatch(readEndpoint('/profile/auth')).then(response => {
             if (_get(response, 'body.data[0].attributes', undefined)) {
                 dispatch(receiveProfile(response.body.data[0].attributes, true));
             }

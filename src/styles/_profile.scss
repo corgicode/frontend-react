@@ -1,4 +1,8 @@
-profile {
+.profile-container {
+  section:first-child {
+    margin-top: -20px;
+  }
+
   .header-container {
     position: relative;
     .options {
