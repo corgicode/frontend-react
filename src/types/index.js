@@ -22,6 +22,7 @@ export const ChallengeType = PropTypes.shape({
         resolution: PropTypes.string,
         status: PropTypes.string,
         difficulty: PropTypes.string,
+        owner: PropTypes.string,
     }),
 });
 

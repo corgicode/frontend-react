@@ -1,11 +1,22 @@
-.challenge-list {
-    .challenge {
-        .tag {
-            margin: 0px 4px 0px;
-        }
-        .btn {
-            margin-right: 20px;
-            margin-top: 10px;
-        }
+.challenge {
+    .tag {
+        margin: 0px 4px 0px;
+    }
+    .btn {
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    .difficulty {
+        min-width: 12em;
+    }
+    .meta span:before, .meta span:after, .meta li:after {
+        content: "";
+    }
+    .meta li {
+        border-left: 1px solid black;
+        padding-left: 1em;
+    }
+    .meta {
+        padding-left: 0;
     }
 }
