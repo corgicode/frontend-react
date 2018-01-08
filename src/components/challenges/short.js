@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { ChallengeType } from '../../types';
 import { Link } from 'react-router-dom';
+import DifficultyStars from '../misc/difficulty';
+import Tags from '../misc/tags';
 
 class ChallengeShort extends Component {
     static propTypes = {
@@ -19,11 +21,9 @@ class ChallengeShort extends Component {
                         </Link>
                     </h2>
                     <ul className="meta">
-                        <li>
+                        <li className="difficulty">
                             <strong>Difficulty:</strong>
-                            {Array((challenge.head.difficulty || 1)).map((k) => {
-                                return <i key={ k } className="icon-attention" />;
-                            })}
+                            <DifficultyStars difficulty={ challenge.head.difficulty } />
                         </li>
                         <li>
                             <i className="icon-block-1" />
@@ -38,9 +38,7 @@ class ChallengeShort extends Component {
                     <p>
                         <i className="icon-tags" />
                         <strong>Tags:</strong>
-                        {challenge.tags.map((t, key) => {
-                            return <span key={ key } className="tag blue-bg">{ t }</span>;
-                        })}
+                        <Tags tags={ challenge.tags } />
                     </p>
                     <Link to={challenge.url} className="btn">Details</Link>
                     <Link to={ `/challenge/submit/${challenge.id}` } className="btn">

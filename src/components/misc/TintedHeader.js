@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 class TintedHeader extends React.Component {
     static propTypes = {
-        title: PropTypes.string.isRequired,
-        subtitle: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        subtitle: PropTypes.string,
     }
 
     render() {
