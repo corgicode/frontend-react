@@ -11,22 +11,26 @@ class ChallengeShort extends Component {
         const { challenge } = this.props;
         return(
             <div className="row">
-                <div className="challenge col-sm-10 col-sm-offset-1 white-bg">
+                <div className="challenge white-bg">
                     <h2 className="post-title">
-                        <a href="{{url}}">
+                        <Link to={challenge.url}>
                             <small>Challenge {challenge.number}:</small>
                             {challenge.title}
-                        </a>
+                        </Link>
                     </h2>
                     <ul className="meta">
-                        <li className=""><strong>Difficulty:</strong>
+                        <li>
+                            <strong>Difficulty:</strong>
                             {Array((challenge.head.difficulty || 1)).map((k) => {
                                 return <i key={ k } className="icon-attention" />;
                             })}
                         </li>
-                        <li className=""><i className="icon-block-1" /> <strong>Resolution</strong> Unresolved</li>
-                        <li className=""><i className="icon-attention-circle" />
-                            <strong>Priority</strong> { challenge.head.priority }
+                        <li>
+                            <i className="icon-block-1" />
+                            <strong>Resolution:</strong> Unresolved</li>
+                        <li>
+                            <i className="icon-attention-circle" />
+                            <strong>Priority:</strong> <span>{ challenge.head.priority }</span>
                         </li>
                     </ul>
                     <p>{challenge.body.short_description &&  challenge.body.short_description }</p>
@@ -35,7 +39,7 @@ class ChallengeShort extends Component {
                         <i className="icon-tags" />
                         <strong>Tags:</strong>
                         {challenge.tags.map((t, key) => {
-                            return <span key={ key } className="blue-bg">{ t }</span>;
+                            return <span key={ key } className="tag blue-bg">{ t }</span>;
                         })}
                     </p>
                     <Link to={challenge.url} className="btn">Details</Link>
