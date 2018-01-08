@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class TintedHeader extends React.Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string.isRequired,
     }
 
     render() {
@@ -15,6 +16,7 @@ class TintedHeader extends React.Component {
                         <div className="col-xs-12 text-center">
                             <header>
                                 <h1>{this.props.title}</h1>
+                                {this.props.subtitle && <p>{this.props.subtitle}</p>}
                             </header>
                         </div>
                     </div>
