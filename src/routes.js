@@ -8,6 +8,7 @@ import ProfileEdit from './containers/profile/Edit';
 import Signup from './containers/signup';
 import ChallengesContainer from './containers/challenges';
 import SingleChallengeContainer from './containers/challenges/single';
+import LearningPageContainer from './containers/learning';
 
 class Routes extends React.Component {
     render() {
@@ -16,6 +17,7 @@ class Routes extends React.Component {
                 <Route exact path="/" component={ Home } />
                 <Route path="/about" component={ About } />
                 <Route path="/signup" component={ Signup } />
+                <Route path="/learning" component={ LearningPageContainer } />
                 <Route path="/challenges" component={ ChallengesContainer } />
                 <Route path="/challenge/:number/:title" component={ SingleChallengeContainer } />
                 <Route path="/profile/edit" component={ ProfileEdit } />
