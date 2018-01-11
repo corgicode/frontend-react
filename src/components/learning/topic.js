@@ -12,7 +12,7 @@ export class LearningTopic extends Component {
                 href: PropTypes.string.isRequired,
                 author: PropTypes.string.isRequired,
                 authorHref: PropTypes.string,
-                type: PropTypes.oneOf(['Article', 'Interactive', 'Video', 'Course', 'Guide', 'Compilation', 'Blog', 'Repo']),
+                type: PropTypes.oneOf(['Article', 'Interactive', 'Video', 'Course', 'Guide', 'Compilation', 'Blog', 'Repo', 'Download']),
                 name: PropTypes.string.isRequired,
             }),
         ),

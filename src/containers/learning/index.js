@@ -15,6 +15,17 @@ export class LearningPage extends Component {
                         to woof@codecorgi.co or comment <a href="https://github.com/corgicode/frontend-react/issues/60">
                         at this issue on our github</a>.
                         </p>
+                        <LearningTopic title="Text Editors"
+                            description="Text editors are one of the mail tools in the programming arsenal, they work very much like a regular text editor but have additional functionality that make your life easier, like user-programmable syntax highlighting, code navigation, keyboard macros, extensions, integrations with source control and much more! We love using VSCode, and recommend it, but the most important thing when you're chosing an editor is that you use the one you feel the most comfortable with and don't let the tools or discussions slow you down or distract you from actually writing code."
+                            iconClass="icon-clipboard icn lg"
+                            links={[
+                                { type: 'Download', name: 'Visual Studio Code by Microsoft', author: 'Microsoft', href: 'https://code.visualstudio.com/' },
+                                { type: 'Article', name: 'Getting started with VSCode', author: 'Microsoft', href: 'https://code.visualstudio.com/docs' },
+                                { type: 'Article', name: 'Why VSCode', author: 'Microsoft', href: 'https://code.visualstudio.com/docs/editor/whyvscode' },
+                                { type: 'Download', name: 'Sublime Studio', author: 'HQ Pty', href: 'https://www.sublimetext.com/' },
+                                { type: 'Guide', name: 'Getting started with Vim', author: 'Scotch.io', href: 'https://scotch.io/tutorials/getting-started-with-vim-an-interactive-guide' },
+                            ]}
+                        />
                         <LearningTopic title="Git Basics"
                             description="Git allows groups of people to work on the same documents (often code) at the same time, and without stepping on each other's toes. It's a distributed version control system."
                             iconClass="icon-lamp icn lg"
