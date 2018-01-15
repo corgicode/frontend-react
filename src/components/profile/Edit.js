@@ -3,9 +3,12 @@ import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { ProfileType } from '../../types';
 import TintedHeader from '../misc/TintedHeader';
+import TextInput from '../fields/Text';
+import TextArea from '../fields/TextArea';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { noop } from '../../constants/utils';
+import { required } from '../../constants/validation';
 
 class ProfileEdit extends React.Component {
     static propTypes = {
@@ -25,46 +28,35 @@ class ProfileEdit extends React.Component {
                         <Link to="/profile" className="btn"><i className="icon-left-1" />Profile</Link>
                         <form onSubmit={handleSubmit(onSubmit)} >
                             <div className="row">
-                                <div className="col-xs-7">
-                                    <div className="control-group">
-                                        <label htmlFor="avatar.url">Avatar Url:</label>
-                                        <Field name="avatar.url" component="input" type="text" />
-                                    </div>
-                                    <div className="control-group">
-                                        <label htmlFor="name">Name</label>
-                                        <Field name="name" component="input" type="text" />
-                                    </div>
-                                    <div className="control-group">
-                                        <label htmlFor="profile.tagline">Tagline</label>
-                                        <Field name="profile.tagline" component="input" type="text" />
-                                    </div>
+                                <div className="col-sm-7">
+                                    <Field name="avatar.url"
+                                        validate={[ required('Please enter an url for your profile picture.')]}
+                                        component={ TextInput } label="Avatar Url" type="text" />
+                                    <Field name="name"
+                                        validate={[ required('Please enter your name.')]}
+                                        component={ TextInput } label="Name" type="text" />
+                                    <Field name="profile.tagline"
+                                        component={ TextInput } label="Tagline" type="text" />
                                 </div>
-                                <div className="col-xs-5">
+                                <div className="col-sm-5">
                                     {profile.avatar && <img className="img-rounded" height="100" src={profile.avatar.url} alt={profile.name} />}
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-sm-7">
-                                    <div className="control-group">
-                                        <label htmlFor="profile.bio">Bio</label>
-                                        <Field name="profile.bio" component="textarea" type="text" />
-                                    </div>
-                                    <div className="control-group">
-                                        <label htmlFor="profile.company">Company</label>
-                                        <Field name="profile.company" component="input" type="text" />
-                                    </div>
-                                    <div className="control-group">
-                                        <label htmlFor="profile.twitter_url">Twitter</label>
-                                        <Field name="profile.twitter_url" component="input" type="text" placeholder="https://twitter.com/david" />
-                                    </div>
-                                    <div className="control-group">
-                                        <label htmlFor="profile.linkedin_url">LinkedIn</label>
-                                        <Field name="profile.linkedin_url" component="input" type="text" placeholder="https://linkedin.com/in/david" />
-                                    </div>
-                                    <div className="control-group">
-                                        <label htmlFor="profile.blog">Blog Url</label>
-                                        <Field name="profile.blog" component="input" type="text" placeholder="https://medium.com/@dvidsilva" />
-                                    </div>
+                                <div className="col-xs-12 col-sm-12 col-md-7">
+                                    <Field name="profile.bio"
+                                        component={ TextArea } label="Bio" type="text" />
+                                    <Field name="profile.company"
+                                        component={ TextInput } label="Company" type="text" />
+                                    <Field name="profile.twitter_url"
+                                        placeholder="https://twitter.com/david"
+                                        component={ TextInput } label="Twitter" type="text" />
+                                    <Field name="profile.linkedin_url"
+                                        placeholder="https://linkedin.com/in/david"
+                                        component={ TextInput } label="LinkedIn" type="text" />
+                                    <Field name="profile.blog"
+                                        placeholder="https://medium.com/@dvidsilva"
+                                        component={ TextInput } label="Blog" type="text" />
                                 </div>
                             </div>
                             <div className="col-xs-12">
