@@ -24,6 +24,8 @@ class ProfileComponent extends React.Component {
                     <meta property="og:title" content={ `Check ${profile.name}'s developer profile in codecorgi` } />
                     <meta property="og:url" content={ `${PROD_URL}/${profile.profile_url}` } />
                     <meta property="og:image" content={`${profile.avatar.url || corgiImg}` } />
+                    <meta name="twitter:title" content={ `codecorgi - ${profile.name}'s developer profile` } />
+                    <meta name="twitter:image" content={`${profile.avatar.url || corgiImg}` } />
                 </Helmet>
                 <section className="tint-bg img-bg-softer" style={{ backgroundImage: `url(${bgImage})` }}>
                     <div className="container header-container">

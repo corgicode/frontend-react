@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ChallengesType } from '../../types';
 import ChallengesList from '../../components/challenges/list.js';
+import { PROD_URL } from '../../constants';
+import { Helmet } from 'react-helmet';
 
 class ChallengesContainer extends Component {
     static propTypes = {
@@ -18,7 +20,17 @@ class ChallengesContainer extends Component {
 
     render() {
         const { challenges } = this.props;
-        return (<ChallengesList challenges={ challenges } />);
+        return (
+            <div>
+                <Helmet>
+                    <title>codecorgi - checkout the available challenges</title>
+                    <meta property="og:title" content="codecorgi - checkout the available challenges" />
+                    <meta property="og:url" content={ `${PROD_URL}/challenges` } />
+                    <meta name="twitter:title" content="codecorgi - checkout the available challenges" />
+                </Helmet>
+                <ChallengesList challenges={ challenges } />
+            </div>
+        );
     }
 }
 

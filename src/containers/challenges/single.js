@@ -7,6 +7,8 @@ import { ChallengeType } from '../../types';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import SingleChallenge from '../../components/challenges/single';
 import defaultChallenge from '../../constants/defaults/challenge';
+import { Helmet } from 'react-helmet';
+import { PROD_URL } from '../../constants';
 
 class ChallengeContainer extends Component {
     static propTypes = {
@@ -24,6 +26,12 @@ class ChallengeContainer extends Component {
         const { challenge } = this.props;
         return (
             <div>
+                {challenge && <Helmet>
+                    <title>{ `codecorgi - ${ challenge.title }` }</title>
+                    <meta property="og:title" content={ `codecorgi - ${ challenge.title }` } />
+                    <meta property="og:url" content={ `${PROD_URL}/${ challenge.url }` } />
+                    <meta name="twitter:title" content={ `codecorgi - ${ challenge.title }` } />
+                </Helmet>}
                 {challenge && <SingleChallenge challenge={ challenge } />}
             </div>
         );
