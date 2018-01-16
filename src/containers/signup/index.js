@@ -15,6 +15,8 @@ class Signup extends React.Component {
                     <meta property="og:title" content="Signup for codecorgi and build your dev profile" />
                     <meta property="og:url" content={ `${PROD_URL}/signup` } />
                     <meta property="og:image" content={`${femaleOctocat}` } />
+                    <meta name="twitter:title" content="Signup for codecorgi and build your dev profile" />
+                    <meta name="twitter:image" content={`${femaleOctocat}` } />
                 </Helmet>
                 <div className="container inner-top-md inner-bottom-sm">
                     <div className="row">
