@@ -3,7 +3,7 @@ import { ChallengeType } from '../../types';
 import TintedHeader from '../misc/TintedHeader';
 import DifficultyStars from '../misc/difficulty';
 import Tags from '../misc/tags';
-import Moment from 'moment';
+import Moment from '../misc/moment';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 
@@ -45,7 +45,7 @@ class SingleChallenge extends Component {
                                 <ul className="features">
                                     <li>
                                         <i className="icon-calendar" />
-                                        <strong>Date Created:</strong> { Moment(challenge.head.date_created).format() }
+                                        <strong>Date Created:</strong> <Moment date={ challenge.head.date_created } />
                                     </li>
                                     <li>
                                         <i className="icon-attention-circle" />
