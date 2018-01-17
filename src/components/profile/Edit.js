@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, FieldArray } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { ProfileType } from '../../types';
 import TintedHeader from '../misc/TintedHeader';
@@ -19,6 +19,55 @@ class ProfileEdit extends React.Component {
     }
 
     render() {
+        const renderProjects = ({ fields, meta: { error } }) => (
+            <div className="row">
+                {fields.map((project, index) => (
+                    <div key={index} className="row">
+                        <div className="col-sm-6">
+                            <Field
+                                name={`${project}.name`}
+                                type="text"
+                                component={ TextInput }
+                                label={`Project #${index + 1} Name`}
+                                placeholder="Name" />
+                        </div>
+                        <div className="col-sm-5 col-xs-5">
+                            <Field
+                                name={`${project}.url`}
+                                type="text"
+                                component={ TextInput }
+                                label="Url"
+                                placeholder="Url"/>
+                        </div>
+                        <div className="col-xm-1 col-xs-1">
+                            <button
+                                type="button"
+                                className="btn btn-danger pull-right"
+                                title="Remove Project"
+                                onClick={() => fields.remove(index)}>
+                                <span>-</span>
+                            </button>
+                        </div>
+                        <div className="col-xs-12">
+                            <Field
+                                name={`${project}.description`}
+                                type="text"
+                                component={ TextInput }
+                                label="Description"
+                                placeholder="Short description" />
+                        </div>
+                    </div>
+                )
+                )}
+                {error && <li className="error">{error}</li>}
+                <div>
+                    <button type="button" className="btn btn-primary" onClick={() => fields.push()}>
+                        + Add Project
+                    </button>
+                </div>
+            </div>
+        );
+
         const { profile = { avatar: {}, profile: {}}, onSubmit, handleSubmit } = this.props;
         return (
             <div>
@@ -60,6 +109,11 @@ class ProfileEdit extends React.Component {
                                 </div>
                             </div>
                             <div className="col-xs-12">
+                                <h2>Projects</h2>
+                                <p>Add links to the projects you feel the most proud of, and want others to see in your profile.</p>
+                                <FieldArray name="projects" component={ renderProjects } />
+                            </div>
+                            <div className="col-xs-12">
                                 <Link to="/profile" className="btn"><i className="icon-cancel" />Discard</Link>
                                 <button type="submit" className="btn btn-primary"><i className="icon-thumbs-up-1" /> Submit</button>
                             </div>
@@ -72,8 +126,11 @@ class ProfileEdit extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    const defaults = { projects: [] };
+    const profile = Object.assign({}, defaults, ownProps.profile);
     return {
-        initialValues: ownProps.profile,
+        profile,
+        initialValues: profile,
         onSubmit: ownProps.onSubmit || noop,
     };
 };
