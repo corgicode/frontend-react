@@ -15,7 +15,6 @@ class ProfileComponent extends React.Component {
 
     render() {
         const { profile, self } = this.props;
-        console.log(profile);
         return (
             <div className="profile-container">
                 <Helmet>
