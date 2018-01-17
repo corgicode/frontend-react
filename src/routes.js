@@ -9,6 +9,7 @@ import Signup from './containers/signup';
 import ChallengesContainer from './containers/challenges';
 import SingleChallengeContainer from './containers/challenges/single';
 import LearningPageContainer from './containers/learning';
+import EasterEgg from './containers/easter';
 
 class Routes extends React.Component {
     render() {
@@ -23,6 +24,7 @@ class Routes extends React.Component {
                 <Route path="/profile/edit" component={ ProfileEdit } />
                 <Route path="/profile/:username?" component={ Profile } />
                 <Route path="/g/:username" component={ Profile } />
+                <Route path="/418" component={ () => <EasterEgg type="418" /> } />
                 <Route component={ e404 } />
             </Switch>
         );
