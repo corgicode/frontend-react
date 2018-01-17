@@ -6,6 +6,7 @@ import corgiImg from '../../assets/images/team/corginson.png';
 import bgImage from '../../assets/images/art/pattern-background03.png';
 import { Helmet } from 'react-helmet';
 import { PROD_URL, BACKEND_URL } from '../../constants';
+import ReactMarkdown from 'react-markdown';
 
 class ProfileComponent extends React.Component {
     static propTypes = {
@@ -48,6 +49,24 @@ class ProfileComponent extends React.Component {
                             </div>
                         </div>
                     </div>
+                </section>
+                <section className="container profile-body">
+                    <div className="row">
+                        <div className="col-xs-12">
+                            <ReactMarkdown source={ profile.profile.bio } />
+                        </div>
+                    </div>
+                    {profile.projects && profile.projects.length > 0 && <div className="row">
+                        <h3>Projects</h3>
+                        <div className="col-xs-12">
+                            {profile.projects.map((p, index) => (
+                                <div className="project" key={ index }>
+                                    <p><Link to={p.url} target="_blank">{ p.name }</Link></p>
+                                    <p>{ p.description }</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>}
                 </section>
             </div>
         );
