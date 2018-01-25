@@ -41,7 +41,7 @@ class ChallengeShort extends Component {
                         <Tags tags={ challenge.tags } />
                     </p>
                     <Link to={challenge.url} className="btn">Details</Link>
-                    <Link to={ `/challenge/submit/${challenge.id}` } className="btn">
+                    <Link to={ `/submit/new/${ challenge.number }` } className="btn">
                         Submit Answer <i className="icon icon-right-1" />
                     </Link>
                 </div>
