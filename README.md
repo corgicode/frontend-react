@@ -30,3 +30,11 @@ npm start
 ```
 
 You need to run a copy of the backend alongside and add all the env variables for it to work proper.
+
+## Contributing
+
+TODO :(
+
+## Code Of Conduct
+
+Find our [code of conduct on github](CODE_OF_CONDUCT.md)
