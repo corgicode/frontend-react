@@ -3,23 +3,23 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { readEndpoint, createResource } from 'redux-json-api';
+import { readEndpoint, updateResource } from 'redux-json-api';
 import { withRouter } from 'react-router';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
 import { BACKEND_URL } from '../../constants';
 import SubmitForm from '../../components/submit/form';
-import { SubmitType } from '../../types';
+import { ChallengeType, SubmitType } from '../../types';
 
-class SubmitFormContainer extends Component {
+class EditSubmitContainer extends Component {
     static propTypes = {
         profile: PropTypes.shape({
             authenticated: PropTypes.bool,
         }),
-        createResource: PropTypes.func,
+        updateResource: PropTypes.func,
         readEndpoint: PropTypes.func,
-        number: PropTypes.string,
-        challenge: PropTypes.string,
+        id: PropTypes.string,
+        challenge: ChallengeType,
         submission: SubmitType,
         history: ReactRouterPropTypes.history,
     }
@@ -30,38 +30,27 @@ class SubmitFormContainer extends Component {
     }
 
     componentWillMount() {
-        this.props.readEndpoint(`submit/user/${ this.props.number }`);
-        this.props.readEndpoint(`challenge/${ this.props.number }`);
-    }
-
-    componentWillReceiveProps() {
-        if (this.props.submission && this.props.submission.id) {
-            this.props.history.push(`/submit/edit/${this.props.submission.id}`);
-        }
+        this.props.readEndpoint(`submit/${ this.props.id }`);
     }
 
     onSubmit(data) {
         const submit = {
             type: 'submit',
             attributes: { ...data, challenge: this.props.challenge.id },
+            id: data.id,
         };
-        this.props.createResource(submit).then(r => {
-            let id;
-            if (r && r.data && r.data[0] && r.data[0].id) {
-                id = r.data[0].id;
-                this.props.history.push(`/submit/${id}`);
-            }
-            // else idk, show an error?
+        this.props.updateResource(submit).then(r => {
+            console.log(r, 'saved');
         });
     }
 
     render() {
-        const { profile, challenge } = this.props;
+        const { profile, challenge, submission } = this.props;
         return(
             <main>
-                {profile.authenticated && challenge &&
+                {profile.authenticated && challenge && submission &&
                     <div>
-                        <SubmitForm title="Add a Submission" subtitle="Get feedback and save to your portfolio!" challenge={ { id: challenge.id, ...challenge.attributes } } onSubmit={ this.onSubmit } />
+                        <SubmitForm title="Edit Submission" submission={ submission } challenge={ { id: challenge.id, ...challenge.attributes } } onSubmit={ this.onSubmit } />
                     </div>
                 }
                 {!profile.authenticated &&
@@ -79,12 +68,12 @@ class SubmitFormContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     const { profile = {}, api } = state;
-    const { challenges = { data: []}, submit: submissions = { data: []}} = api;
-    const number = ownProps.match.params.number;
-    const challenge = challenges.data.find(c => c.attributes && c.attributes.number === number);
-    const submission = challenge ? submissions.data.find(s => s.attributes.challenge === challenge.id ) : undefined;
+    const { /* challenges = { data: []}, */ submit: submissions = { data: []}} = api;
+    const id = ownProps.match.params.id;
+    const submission = submissions.data.find((c) => c.id === id) || { attributes: {} };
+    const challenge = submission.attributes && submission.attributes.challenge || { attributes: {} };
     return {
-        number,
+        id,
         challenge,
         submission: submission ? { ...submission.attributes, id: submission.id } : {},
         profile: {
@@ -95,7 +84,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
     readEndpoint,
-    createResource,
+    updateResource,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SubmitFormContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EditSubmitContainer));

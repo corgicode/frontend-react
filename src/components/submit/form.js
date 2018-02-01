@@ -8,14 +8,17 @@ import { required } from '../../constants/validation';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { SubmitType } from '../../types';
 
 class SubmitForm extends Component {
     static propTypes = {
         title: PropTypes.string,
+        subtitle: PropTypes.string,
         challenge: ChallengeType,
         initialValues: PropTypes.object,
         onSubmit: PropTypes.func,
         handleSubmit: PropTypes.func,
+        submission: SubmitType,
     }
 
     render() {
@@ -23,7 +26,7 @@ class SubmitForm extends Component {
 
         return(
             <div>
-                <TintedHeader title={ this.props.title } />
+                <TintedHeader title={ this.props.title } subtitle={ this.props.subtitle } />
                 <section className="form">
                     <div className="container">
                         <h2>Challenge #{challenge.number}: { challenge.title }</h2>
@@ -59,14 +62,17 @@ class SubmitForm extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     const challengeId = ownProps.challenge && ownProps.challenge.id;
+    const submission = ownProps.submission || {};
     return {
         challenge: ownProps.challenge,
         initialValues: {
             challenge: challengeId,
+            ...submission,
         }
     };
 };
 
 export default connect(mapStateToProps, null)(reduxForm({
     form: 'profile/edit',
+    enableReinitialize: true,
 })(SubmitForm));

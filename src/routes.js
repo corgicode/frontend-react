@@ -7,6 +7,8 @@ import e404 from './containers/404';
 import ProfileEdit from './containers/profile/Edit';
 import Signup from './containers/signup';
 import SubmitFormContainer from './containers/submit/form';
+import SubmitEditContainer from './containers/submit/edit';
+import SubmitViewContainer from './containers/submit';
 import ChallengesContainer from './containers/challenges';
 import SingleChallengeContainer from './containers/challenges/single';
 import LearningPageContainer from './containers/learning';
@@ -22,6 +24,8 @@ class Routes extends React.Component {
                 <Route path="/learning" component={ LearningPageContainer } />
                 <Route path="/challenges" component={ ChallengesContainer } />
                 <Route path="/submit/new/:number" component={ SubmitFormContainer } />
+                <Route path="/submit/edit/:id" component={ SubmitEditContainer } />
+                <Route path="/submit/:id" component={ SubmitViewContainer } />
                 <Route path="/challenge/:number/:title" component={ SingleChallengeContainer } />
                 <Route path="/profile/edit" component={ ProfileEdit } />
                 <Route path="/profile/:username?" component={ Profile } />
