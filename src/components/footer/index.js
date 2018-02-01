@@ -66,6 +66,7 @@ class Footer extends React.Component {
                             <li><Link to="/learning">Learning</Link></li>
                             <li><Link to="/about">About</Link></li>
                             <li><a href="http://services.codecorgi.co/">Services</a></li>
+                            <li><a href="https://github.com/corgicode/frontend-react/blob/dev/CODE_OF_CONDUCT.md">Code Of Conduct</a></li>
                         </ul>
                     </div>
                 </div>
