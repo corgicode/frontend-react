@@ -93,7 +93,7 @@ class SingleChallenge extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <Link to={ `/challenge/submit${challenge.id}` } className="btn btn-large">
+                            <Link to={ `/submit/new/${challenge.number}` } className="btn btn-large">
                                 Submit Answer <i className="icon icon-right-1" />
                             </Link>
                         </div>
@@ -148,7 +148,7 @@ class SingleChallenge extends Component {
                             where you will find information and links to tutorials and other content.</p>
                         </div>
                         <div className="row">
-                            <Link to={ `/challenge/submit/${challenge.id}` } className="btn btn-large">
+                            <Link to={ `/submit/new/${challenge.number}` } className="btn btn-large">
                                 Submit Answer <i className="icon icon-right-1" />
                             </Link>
                         </div>

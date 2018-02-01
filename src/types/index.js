@@ -27,3 +27,20 @@ export const ChallengeType = PropTypes.shape({
 });
 
 export const ChallengesType = PropTypes.arrayOf(ChallengeType);
+
+export const SubmitType = PropTypes.shape({
+    updatedAt: PropTypes.string,
+    createdAt: PropTypes.string,
+    repo: PropTypes.string,
+    demo: PropTypes.string,
+    description: PropTypes.string,
+    advantage: PropTypes.string,
+    struggle: PropTypes.string,
+});
+
+export const ShortUserType = PropTypes.shape({
+    username: PropTypes.string,
+    avatar: PropTypes.shape({
+        url: PropTypes.string,
+    }),
+});
