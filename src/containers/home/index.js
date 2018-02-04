@@ -40,27 +40,32 @@ class Home extends React.Component {
                 </Helmet>
                 <section className="tall" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover' }}>
                     <div className="container">
-                        <h1 className="main white-text">Grow your developer profile</h1>
-                        <div className="fadeInDown-3">
-                            <Link to="/challenges/" className="btn btn-large">Get started now</Link>
-                        </div>
+                        <h1 className="main white-text">Master your craft with real world coding challenges</h1>
+                        <p style={{ color: 'white', fontSize: '25px', textShadow: '4px 3px 5px black'}}>
+                            <strong>An open source platform to practice coding like a boos, on your own terms</strong>
+                        </p>
                     </div>
                 </section>
                 <section>
                     <div className="container inner-top-md inner-bottom-sm">
                         <div className="row">
-                            <div className="col-md-5 inner-right inner-bottom-xs">
+                            <div className="col-md-6 inner-right inner-bottom-xs">
                                 <header>
-                                    <h1>How it works</h1>
+                                    <h1>Practice code with non-trivial codebases</h1>
                                     <p>
-                                        Work through tickets/challenges like a real programmer does on the job. Codecorgi provides
-                                        simulation project management tickets for you to build real products and
-                                        grow your developer portfolio.
+                                    Everything's great ‘in theory’, but when
+                                    it comes to coding at a best companies,
+                                    most bootcamps (and lame organizations)
+                                    leave you with little real life knowledge
+                                    or new industry skills. We create
+                                    challenges that simulate the latest
+                                    technology so you’ll have an edge over
+                                    the competition.
                                     </p>
                                 </header>
-                                <div><a href="/challenges/" className="btn btn-large btn-one">View Challenges</a></div>
+                                <div><Link to="/challenges/" className="btn btn-large btn-one">View Challenges</Link></div>
                             </div>
-                            <div className="col-md-7">
+                            <div className="col-md-6">
                                 <figure>
                                     <div className="icon-overlay icn-link">
                                         <img src={ticketImage} alt="Sample challenge in codecorgi" />
@@ -76,15 +81,10 @@ class Home extends React.Component {
                         <div className="row">
                             <div className="col-sm-8 col-sm-offset-2 text-center">
                                 <header>
-                                    <h1>Work on a ticket,<br />
-                                    get feedback on your code</h1>
+                                    <h1>Show off your portfolio to employers, <br/>
+                                    (and friends who pretend to care)</h1>
+                                    <p>Annoy your friends and show off to potential employers by sharing all your completed challenges.</p>
                                 </header>
-                            </div>
-                            <div className="row">
-                                <div className="col-sm-10 col-sm-offset-1 portfolio gap">
-                                    <p className="text-center"><strong>Pick a challenge from our list, and share your solution with the community.</strong></p>
-                                    <p className="text-center"><strong>Give and receive feedback from other developers.</strong></p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,15 @@ class Home extends React.Component {
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2 text-center">
                                 <header>
-                                    <h1>Code in your environment, submit to publish your code for review</h1>
+                                    <h1>Code and chill? Sure! / Code on your own terms</h1>
+                                    <p>
+                                        In real life you’d never code on a
+                                        website instead of your computer - so
+                                        why practice like that? All
+                                        challenges can be downloaded straight
+                                        to your computer, so you can work on
+                                        your own time and your own terms.
+                                    </p>
                                 </header>
                             </div>
                         </div>
@@ -110,7 +118,7 @@ class Home extends React.Component {
                                 <div className="col-sm-6">
                                     <figure>
                                         <div className="icon-overlay icn-link">
-                                            <img src={formImage} alt="submit to publish your code for review" />
+                                            <img src={formImage} alts="submit to publish your code for review" />
                                         </div>
                                     </figure>
                                 </div>
