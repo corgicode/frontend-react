@@ -36,7 +36,7 @@ class Footer extends React.Component {
                         <div className="col-md-4 col-sm-6 inner">
                             <h4>Get In Touch</h4>
                             <ul className="contacts">
-                                <li><p>We want to hear from you, send us your feedback to:</p></li>
+                                <li><p> Want new features and challenges? Want to share your opinion? Our team of highly trained corgis are ready to chat. Send us an email to:</p></li>
                                 {/*
                                 <!--<li><i className="icon-location contact"></i> 84 Street, City, State 24813</li>-->
                                 <!--<li><i className="icon-mobile contact"></i> +00 (123) 456 78 90</li>-->
@@ -60,7 +60,7 @@ class Footer extends React.Component {
                 </div>
                 <div className="footer-bottom">
                     <div className="container inner">
-                        <p className="pull-left">© 2017 codecorgi. All rights reserved.</p>
+                        <p className="pull-left">© 2018 codecorgi. All rights reserved.</p>
                         <ul className="footer-menu pull-right">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/learning">Learning</Link></li>
