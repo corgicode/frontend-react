@@ -1,5 +1,7 @@
 # codecorgi
 
+Checkout our progress on [![Waffle.io](https://badge.waffle.io/corgicode/frontend-react.svg?columns=all)](https://waffle.io/corgicode/frontend-react)
+
 Frontend project for [codecorgi](codecorgi.co).
 
 Decided to open source it so that users can look at a non trivial codebase and follow development.
@@ -9,14 +11,17 @@ Redux and Redux Thunk boilerplate.
 
 [![Dependency Status](https://dependencyci.com/github/corgicode/frontend-react/badge)](https://dependencyci.com/github/corgicode/frontend-react)
 
+[![Build Status](https://circleci.com/gh/corgicode/frontend-react.svg?style=shield)](https://circleci.com/gh/corgicode/frontend-react)
+
+[ ![Codeship Status](https://app.codeship.com/projects/db18c140-ec1e-0135-a24a-2abb3399b63f/status?branch=master)](https://app.codeship.com/projects/270289)
+
 * Tutorial: [Getting started with create-react-app, Redux, React Router & Redux Thunk](https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f)
-* Example: [View on Heroku](https://cra-redux-router-thunk.herokuapp.com/)
 
 ## Installation
 
 ```bash
-git clone https://github.com/notrab/create-react-app-redux.git
-cd create-react-app-redux
+git clone git@github.com:corgicode/frontend-react.git frontend
+cd frontend
 npm i
 ```
 
@@ -27,3 +32,11 @@ npm start
 ```
 
 You need to run a copy of the backend alongside and add all the env variables for it to work proper.
+
+## Contributing
+
+TODO :(
+
+## Code Of Conduct
+
+Find our [code of conduct on github](CODE_OF_CONDUCT.md)

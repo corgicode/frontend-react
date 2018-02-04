@@ -1,26 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoTextHover from '../../images/logo-text-hover.png';
-import logoText from '../../images/logo-text.png';
+import logoTextHover from '../../assets/images/logo-text-hover.png';
+import logoText from '../../assets/images/logo-text.png';
 import '../../styles/_header.scss';
+import Hoverimage from '../hoverImage';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import ReactRouterPropTypes from 'react-router-prop-types';
+import PropTypes from 'prop-types';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.mouseOver = this.mouseOver.bind(this);
-        this.mouseOut = this.mouseOut.bind(this);
-        this.toggleVisibility = this.toggleVisibility.bind(this);
-        this.state = {
-            hover: false,
-            visible: false,
-        };
+    static propTypes = {
+        history: ReactRouterPropTypes.history.isRequired,
+        profile: PropTypes.shape({
+            authenticated: PropTypes.bool,
+            username: PropTypes.string,
+        }),
     }
 
-    mouseOver = () => {
-        this.setState({hover: true});
-    }
-    mouseOut() {
-        this.setState({hover: false});
+    constructor(props) {
+        super(props);
+        this.toggleVisibility = this.toggleVisibility.bind(this);
+        this.state = {
+            visible: false,
+        };
+        this.props.history.listen(() => {
+            this.setState({ visible: false });
+        });
     }
 
     toggleVisibility() {
@@ -28,6 +34,8 @@ class Header extends React.Component {
     }
 
     render() {
+        const { authenticated, username } = this.props.profile;
+
         return (<header className="header">
             <div className="navbar">
                 <div className="navbar-header">
@@ -40,26 +48,25 @@ class Header extends React.Component {
                             <li><a href="#"><i class="icon-s-behance"></i></a></li>
                             <li><a href="#"><i class="icon-s-dribbble"></i></a></li>*/}
                         </ul>
-                        <Link className="navbar-brand" onClick={this.toggleVisibility} to="/">
-                            {this.state.hover && <img src={logoTextHover} width="168" className="logo" alt="codecorgi logo" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut} />}
-                            {!this.state.hover && <img src={logoText} width="168" className="logo" alt="codecorgi logo" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut} />}
+                        <Link className="navbar-brand"  to="/">
+                            <Hoverimage width="168" className="logo" alt="codecorgi logo" image1={logoText} image2={logoTextHover} />
                         </Link>
                         <a className="navbar-toggle btn responsive-menu pull-right red-button" onClick={this.toggleVisibility}><i className="icon-menu-1"/></a>
                     </div>
                 </div>
                 <div className="yamm">
-                    <div className={'navbar-collapse visible-md visible-lg' + (this.state.visible ? 'visible-sm visible-xs' : '')}>
+                    <div className={'navbar-collapse visible-md visible-lg ' + (this.state.visible ? 'visible-sm visible-xs' : '')}>
                         <div className="container">
-                            <Link className="navbar-brand" onClick={this.toggleVisibility} to="/">
-                                {this.state.hover && <img src={logoTextHover} className="logo" alt="codecorgi logo" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut} />}
-                                {!this.state.hover && <img src={logoText} className="logo" alt="codecorgi logo" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut} />}
+                            <Link className="navbar-brand"  to="/">
+                                <Hoverimage width="168" className="logo" alt="codecorgi logo" image1={logoText} image2={logoTextHover} />
                             </Link>
                             <ul className="nav navbar-nav">
                                 <li>
-                                    <Link to="/challenges" onClick={this.toggleVisibility}>Challenges</Link>
+                                    <Link to="/challenges">Challenges</Link>
                                 </li>
                                 <li>
-                                    <Link className="red-button" to="/app#!/signup" onClick={this.toggleVisibility}>Account</Link>
+                                    {!authenticated && <Link className="red-button" to="/signup" onClick={this.toggleVisibility}>Signup {username}</Link>}
+                                    {authenticated && <Link className="red-button" to="/profile" onClick={this.toggleVisibility}>Profile</Link>}
                                 </li>
                             </ul>
                         </div>
@@ -70,4 +77,12 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+function mapStateToProps() {
+    return {};
+}
+
+function mapDispatchToProps() {
+    return {};
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
