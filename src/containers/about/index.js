@@ -8,6 +8,7 @@ import davidImg from '../../assets/images/team/david.png';
 import corgiImg from '../../assets/images/team/corginson.png';
 import sydneyImg from '../../assets/images/team/sydney.png';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 class About extends React.Component {
     render() {
@@ -35,20 +36,15 @@ class About extends React.Component {
                             <div className="col-sm-6 inner-right-xs inner-bottom-xs">
                                 <h2>Our Mission</h2>
                                 <p>
-                                    Codecorgi is a visual portfolio for front-end developers to showcase their code
-                                    and experience. Codecorgi's vision is to help employ the workforce by providing
-                                    developers continuous training and project experience. Our company believes
-                                    that junior developers have a difficulty landing their first programming
-                                    career.
+                                    Codecorgi is an an open source platform to practice coding with non trivial
+                                    codebases on your own terms, for front-end developers. Showcase your code
+                                    and experience. Codecorgi's vision is to help devs advance their career by providing
+                                    continuous training and project experience. To help them get over the barrier
+                                    that junior developers have when landing their first programming job.
                                 </p>
                                 <p>
-                                    Our founders want to help novice developers get hired and expand their
-                                    opportunities regardless of where they are educated or located. Codecorgi sees
-                                    newly minted programmers as underemployed, in a role these students did not
-                                    invest time and money for.
-                                </p>
-                                <p>
-                                    Codecorgi provides simulation project tickets so that junior programmers gain competitive abilities. Learn by doing projects applicable to the corporate world.
+                                    Codecorgi provides simulation project tickets so that junior programmers gain competitive abilities.
+                                    Learn by doing projects applicable to the corporate world.
                                 </p>
                             </div>
                             <div className="col-sm-6 inner-left-xs inner-bottom-xs">
@@ -57,6 +53,28 @@ class About extends React.Component {
                                         <Hoverimage className="logo" alt="codecorgi logo" image1={logo} image2={logoHover} />
                                     </div>
                                 </figure>
+                            </div>
+                            <div className="col-sm-8 col-xs-12">
+                                <h2>Open Source & ready to improve</h2>
+                                <p>
+                                    No secrets here. All our code is open
+                                    source to modify and all our decisions
+                                    are available to learn from. So feel free
+                                    to poke around our code, question our ideas, or tell us what
+                                    new features you want.
+                                </p>
+                                <p>
+                                    <Link to="https://github.com/corgicode/frontend-react">Check us out on github</Link>
+                                </p>
+                                <h2>Zero bad vibes</h2>
+                                <p>
+                                    We’re creating a collaborative & open community,
+                                    so take your bad vibes elsewhere. We want
+                                    everyone to feel comfortable learning
+                                    and making mistakes, chatting with other
+                                    collaborators and learning
+                                    together.
+                                </p>
                             </div>
                         </div>
                     </div>
