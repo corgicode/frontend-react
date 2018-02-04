@@ -13,6 +13,8 @@ Redux and Redux Thunk boilerplate.
 
 [![Build Status](https://circleci.com/gh/corgicode/frontend-react.svg?style=shield)](https://circleci.com/gh/corgicode/frontend-react)
 
+[ ![Codeship Status](https://app.codeship.com/projects/db18c140-ec1e-0135-a24a-2abb3399b63f/status?branch=master)](https://app.codeship.com/projects/270289)
+
 * Tutorial: [Getting started with create-react-app, Redux, React Router & Redux Thunk](https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f)
 
 ## Installation
