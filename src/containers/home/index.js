@@ -42,7 +42,7 @@ class Home extends React.Component {
                     <div className="container">
                         <h1 className="main white-text">Master your craft with real world coding challenges</h1>
                         <p style={{ color: 'white', fontSize: '25px', textShadow: '4px 3px 5px black'}}>
-                            <strong>An open source platform to practice coding like a boos, on your own terms</strong>
+                            <strong>An open source platform to practice coding like a boss, on your own terms</strong>
                         </p>
                     </div>
                 </section>
@@ -94,7 +94,7 @@ class Home extends React.Component {
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2 text-center">
                                 <header>
-                                    <h1>Code and chill? Sure! / Code on your own terms</h1>
+                                    <h1>Code and chill? Sure!</h1>
                                     <p>
                                         In real life you’d never code on a
                                         website instead of your computer - so
