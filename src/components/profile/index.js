@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileType } from '../../types';
+import { ProfileType, SubmitType } from '../../types';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import corgiImg from '../../assets/images/team/corginson.png';
@@ -7,15 +7,17 @@ import bgImage from '../../assets/images/art/pattern-background03.png';
 import { Helmet } from 'react-helmet';
 import { PROD_URL, BACKEND_URL } from '../../constants';
 import ReactMarkdown from 'react-markdown';
+import SubmitList from '../submit/list';
 
 class ProfileComponent extends React.Component {
     static propTypes = {
         profile: ProfileType,
         self: PropTypes.bool.isRequired,
+        submits: PropTypes.arrayOf( SubmitType ),
     }
 
     render() {
-        const { profile, self } = this.props;
+        const { profile, self, submits } = this.props;
         return (
             <div className="profile-container">
                 <Helmet>
@@ -50,23 +52,33 @@ class ProfileComponent extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className="container profile-body">
+                <section className="container profile-body" style={{ margin: '30px auto' }}>
                     <div className="row">
                         <div className="col-xs-12">
                             <ReactMarkdown source={ profile.profile.bio } />
                         </div>
                     </div>
-                    {profile.projects && profile.projects.length > 0 && <div className="row">
-                        <h3>Projects</h3>
-                        <div className="col-xs-12">
-                            {profile.projects.map((p, index) => (
-                                <div className="project" key={ index }>
-                                    <p><Link to={p.url} target="_blank">{ p.name }</Link></p>
-                                    <p>{ p.description }</p>
-                                </div>
-                            ))}
+                    {submits && submits.length > 0 &&
+                        <div className="row" style={{ marginBottom: '30px' }}>
+                            <h3>Submissions</h3>
+                            <div className="col-xs-12">
+                                <SubmitList submits={ submits } />
+                            </div>
                         </div>
-                    </div>}
+                    }
+                    {profile.projects && profile.projects.length > 0 &&
+                        <div className="row" style={{ marginBottom: '30px' }}>
+                            <h3>Projects</h3>
+                            <div className="col-xs-12">
+                                {profile.projects.map((p, index) => (
+                                    <div className="project" key={ index }>
+                                        <p><Link to={p.url} target="_blank">{ p.name }</Link></p>
+                                        <p>{ p.description }</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    }
                 </section>
             </div>
         );
