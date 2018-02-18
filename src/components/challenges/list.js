@@ -10,7 +10,7 @@ class ChallengesList extends Component {
 
     render() {
         const { challenges } = this.props;
-
+        challenges.sort((a, b) => parseInt(a.attributes.number, 10) < parseInt(b.attributes.number, 10));
         return(
             <div>
                 <TintedHeader title="Challenges" subtitle="These are all the available challenges" />
