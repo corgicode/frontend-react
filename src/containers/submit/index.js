@@ -26,14 +26,14 @@ class ChallengeContainer extends Component {
     render() {
         const { challenge, submission, user } = this.props;
         return (
-            <div>
+            <div style={{ margin: '30px auto' }} >
                 {submission && challenge && <Helmet>
                     <title>{ `codecorgi | submission for: ${ challenge.title }` }</title>
                     <meta property="og:title" content={ `codecorgi | submission for: ${ challenge.title }` } />
                     <meta property="og:url" content={ `${PROD_URL}/${ challenge.url }` } />
                     <meta name="twitter:title" content={ `codecorgi | submission for: ${ challenge.title }` } />
                 </Helmet>}
-                {submission && challenge &&
+                {submission && challenge && user._id &&
                     <SubmitDetails submission={ submission } challenge={ challenge } user={ user } />
                 }
             </div>
