@@ -1,5 +1,7 @@
 # Changelog
 
+## 0.10.3
+- HOTFIX: Error in profile page
 ## 0.10.0
 
-- displaying projects and submissions in profile page
+- Displaying projects and submissions in profile page

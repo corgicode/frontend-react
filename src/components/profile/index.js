@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import { PROD_URL, BACKEND_URL } from '../../constants';
 import ReactMarkdown from 'react-markdown';
 import SubmitList from '../submit/list';
+import _get from 'lodash/get';
 
 class ProfileComponent extends React.Component {
     static propTypes = {
@@ -25,9 +26,9 @@ class ProfileComponent extends React.Component {
                     <meta property="og:type" content="profile" />
                     <meta property="og:title" content={ `Check ${profile.name}'s developer profile in codecorgi` } />
                     <meta property="og:url" content={ `${PROD_URL}/${profile.profile_url}` } />
-                    <meta property="og:image" content={`${profile.avatar.url || corgiImg}` } />
+                    <meta property="og:image" content={`${_get(profile, 'avatar.url', undefined) || corgiImg}` } />
                     <meta name="twitter:title" content={ `codecorgi - ${profile.name}'s developer profile` } />
-                    <meta name="twitter:image" content={`${profile.avatar.url || corgiImg}` } />
+                    <meta name="twitter:image" content={`${_get(profile, 'avatar.url', undefined) || corgiImg}` } />
                 </Helmet>
                 <section className="tint-bg img-bg-softer" style={{ backgroundImage: `url(${bgImage})` }}>
                     <div className="container header-container">
@@ -40,13 +41,13 @@ class ProfileComponent extends React.Component {
                                 <header>
                                     <h1>
                                         <div className="profile-image">
-                                            {!profile.avatar.url && <img src={corgiImg} alt={profile.name} />}
-                                            {profile.avatar.url && <img src={profile.avatar.url} alt={profile.name} />}
+                                            {!_get(profile, 'avatar.url', undefined) && <img src={ corgiImg } alt={ profile.name } />}
+                                            {_get(profile, 'avatar.url', undefined) && <img src={ _get(profile, 'avatar.url', '') } alt={ profile.name } />}
                                         </div>
-                                        <span>{profile.name}</span>
+                                        <span>{ profile.name }</span>
                                     </h1>
-                                    <p>{profile.profile.tagline}</p>
-                                    <p><i className="icon-location" /> {profile.profile.location}</p>
+                                    <p>{ _get(profile, 'profile.tagline', '') }</p>
+                                    <p><i className="icon-location" /> { _get(profile, 'profile.location', '') }</p>
                                 </header>
                             </div>
                         </div>
@@ -55,7 +56,7 @@ class ProfileComponent extends React.Component {
                 <section className="container profile-body" style={{ margin: '30px auto' }}>
                     <div className="row">
                         <div className="col-xs-12">
-                            <ReactMarkdown source={ profile.profile.bio } />
+                            <ReactMarkdown source={  _get(profile, 'profile.bio', '') } />
                         </div>
                     </div>
                     {submits && submits.length > 0 &&
