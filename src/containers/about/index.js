@@ -8,7 +8,6 @@ import davidImg from '../../assets/images/team/david.png';
 import corgiImg from '../../assets/images/team/corginson.png';
 import sydneyImg from '../../assets/images/team/sydney.png';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
 
 class About extends React.Component {
     render() {
@@ -64,7 +63,7 @@ class About extends React.Component {
                                     new features you want.
                                 </p>
                                 <p>
-                                    <Link to="https://github.com/corgicode/frontend-react">Check us out on github</Link>
+                                    <a href="https://github.com/corgicode/frontend-react" target="_blank">Check us out on github</a>
                                 </p>
                                 <h2>Zero bad vibes</h2>
                                 <p>
