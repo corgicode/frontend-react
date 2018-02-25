@@ -109,7 +109,7 @@ class SingleChallenge extends Component {
                             {challenge.source.map((s, key) => (
                                 <p key={ key }>
                                     <strong>{s.name}</strong>
-                                    <Link to={s.url}>{ s.url }</Link>
+                                    <a href={s.url}>{ s.url }</a>
                                 </p>
                             ))}
                         </div>
