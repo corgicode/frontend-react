@@ -11,7 +11,7 @@ class Tags extends Component {
         return(
             <span>
                 {tags.map((t, key) => {
-                    return <span key={ key } className="tag blue-bg">{ t }</span>;
+                    return <span key={ key } className="tag blue-bg" style={{ marginRight: '5px', marginBottom: '5px', display: 'inline-block' }}>{ t }</span>;
                 })}
             </span>
         );
