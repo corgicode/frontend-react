@@ -18,7 +18,7 @@ class SingleChallenge extends Component {
             <div>
                 <TintedHeader title={challenge.title} subtitle={ challenge.body.short_description } />
                 <section className="container">
-                    <div className="content challenge">
+                    <div style={{ maxWidth: '800px', width: '92%', marginLeft: 'auto', marginRight: 'auto', marginTop: '60px', marginBottom: '120px' }}>
                         <div className="ticket-data row pricing">
                             <div className="col-sm-6 plan">
                                 <ul className="features">
@@ -36,8 +36,9 @@ class SingleChallenge extends Component {
                                         <strong>Type:</strong> { challenge.head.challenge_type }
                                     </li>
                                     <li>
-                                        <i className="icon-user" />
-                                        <strong>Asigned to:</strong> Me
+                                        <i className="icon-tags" />
+                                        <strong>Tags:&nbsp;</strong>
+                                        <Tags tags={ challenge.tags } />
                                     </li>
                                 </ul>
                             </div>
@@ -61,13 +62,6 @@ class SingleChallenge extends Component {
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div className="row tags">
-                            <p>
-                                <i className="icon-tags" />
-                                <strong>Tags:</strong>
-                                <Tags tags={ challenge.tags } />
-                            </p>
                         </div>
                         <a className="anchor" id="description" />
                         <div className="grey-box">
@@ -97,6 +91,16 @@ class SingleChallenge extends Component {
                                 Submit Answer <i className="icon icon-right-1" />
                             </Link>
                         </div>
+                        <h2>Extra Points</h2>
+                        <div className="extra-points">
+                            <a className="anchor" id="extra-points" />
+                            {challenge.body.extra_points &&
+                                <ReactMarkdown source={challenge.body.extra_points} />
+                            }
+                            {!challenge.body.extra_points &&
+                                <p>The requirements are complete as is.</p>
+                            }
+                        </div>
                         <a className="anchor" id="technical" />
                         <h2>Technical Notes</h2>
                         <div className="technical-notes">
@@ -108,7 +112,7 @@ class SingleChallenge extends Component {
                         <div className="source">
                             {challenge.source.map((s, key) => (
                                 <p key={ key }>
-                                    <strong>{s.name}</strong>
+                                    <strong>{s.name}:&nbsp;</strong>
                                     <a href={s.url}>{ s.url }</a>
                                 </p>
                             ))}
