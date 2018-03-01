@@ -8,6 +8,7 @@ import davidImg from '../../assets/images/team/david.png';
 import corgiImg from '../../assets/images/team/corginson.png';
 import sydneyImg from '../../assets/images/team/sydney.png';
 import { Helmet } from 'react-helmet';
+import TeamMember from '../../components/about/TeamMember';
 
 class About extends React.Component {
     render() {
@@ -89,81 +90,49 @@ class About extends React.Component {
                         </div>
                         <div className="row inner-top-sm text-center">
                             <div className="col-sm-6 inner-bottom-sm ">
-                                <figure className="member">
-                                    <div className="icon-overlay icn-link">
-                                        <a><img src={sydneyImg} className="img-circle"/></a>
-                                    </div>
-                                    <figcaption>
-                                        <h2>
-                                            Sydney Lai
-                                            <span>CEO</span>
-                                        </h2>
-                                        <p>
-                                            Startup growth mentor, award-winning background in sales and business
-                                            development @Techstars, @US Dept of Commerce, LGBT Technology Leader by
-                                            The White House, Office of Science and Technology Policy, TEDx Speaker.
-                                        </p>
-                                        <ul className="social">
-                                            <li><a href="https://twitter.com/sydneylai" target="_blank"><i className="icon-s-twitter"/></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
+                                <TeamMember
+                                    name="Sydney Lai"
+                                    title="CEO"
+                                    description="Startup growth mentor, award-winning background in sales and business
+                                    development @Techstars, @US Dept of Commerce, LGBT Technology Leader by
+                                    The White House, Office of Science and Technology Policy, TEDx Speaker."
+                                    image={sydneyImg}
+                                    links={[{href: 'https://twitter.com/sydneylai', className: 'mg-circle'}]}
+                                />
                             </div>
                             <div className="col-sm-6 inner-bottom-sm ">
-                                <figure className="member">
-                                    <div className="icon-overlay icn-link">
-                                        <a><img src={davidImg} className="img-circle"/></a>
-                                    </div>
-                                    <figcaption>
-                                        <h2>
-                                            David Silva
-                                            <span>CTO</span>
-                                        </h2>
-                                        <p>10+ years of programming experience, Angular speaker,
-                                            Developer Bootcamp founder, @ Diamond, Techqueria,
-                                            Doctor on Demand, AngelHack, 40 Under 40: Tech Diversity – Silicon Valley.
-                                        </p>
-                                        <ul className="social">
-                                            <li><a href="https://twitter.com/dvidsilva" target="_blank"><i className="icon-s-twitter"/></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
+                                <div className="icon-overlay icn-link">
+                                    <TeamMember
+                                        name="David Silva"
+                                        title="CTO"
+                                        description="10+ years of programming experience, Angular speaker,
+                                        Developer Bootcamp founder, @ Diamond, Techqueria,
+                                        Doctor on Demand, AngelHack, 40 Under 40: Tech Diversity – Silicon Valley."
+                                        image={davidImg}
+                                        links={[{href: 'https://twitter.com/dvidsilva', className: 'con-s-twitter'}]}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className="row inner-top-sm text-center">
                             <div className="col-sm-6 inner-bottom-sm ">
-                                <figure className="member">
-                                    <div className="icon-overlay icn-link">
-                                        <a><img src={tereImg} className="img-circle" /></a>
-                                    </div>
-                                    <figcaption>
-                                        <h2>
-                                            Tere Gallarreta
-                                            <span>Web Developer</span>
-                                        </h2>
-                                        <p>Web Developer who values building bridges between cultures and people, creating beautiful and meaningful things, and connecting people to resources that enrich their lives.</p>
-                                        <ul className="social">
-                                            <li><a href="https://www.linkedin.com/in/tere-gallarreta/" target="_blank"><i className="icon-linkedin"/></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
+                                <TeamMember
+                                    name="Tere Gallarreta"
+                                    title="Web Developer"
+                                    description="Web Developer who values building bridges between cultures and people, creating beautiful and meaningful things, and connecting people to resources that enrich their lives."
+                                    image={tereImg}
+                                    links={[{href: 'https://www.linkedin.com/in/tere-gallarreta/', className: 'icon-linkedin'}]}
+                                />
                             </div>
                             <div className="col-sm-6 inner-bottom-sm ">
-                                <figure className="member">
-                                    <div className="icon-overlay icn-link">
-                                        <a><img src={corgiImg} className="img-circle" /></a>
-                                    </div>
-                                    <figcaption>
-                                        <h2>
-                                            Corginson
-                                            <span>Chief Happiness Officer</span>
-                                        </h2>
-                                        <p/>
-                                        <ul className="social">
-                                            <li><a href="https://twitter.com/codecorgi" target="_blank"><i className="icon-s-twitter"/></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
+                                <div className="icon-overlay icn-link">
+                                    <TeamMember
+                                        name="Corginson"
+                                        title="Chief Happiness Officer"
+                                        image={corgiImg}
+                                        links={[{href: 'https://twitter.com/codecorgi', className: 'icon-s-twitter'}]}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
