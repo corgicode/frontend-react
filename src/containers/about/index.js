@@ -129,6 +129,7 @@ class About extends React.Component {
                                     <TeamMember
                                         name="Corginson"
                                         title="Chief Happiness Officer"
+                                        description=" "
                                         image={corgiImg}
                                         links={[{href: 'https://twitter.com/codecorgi', className: 'icon-s-twitter'}]}
                                     />
