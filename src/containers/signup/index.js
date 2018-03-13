@@ -4,8 +4,25 @@ import femaleOctocat from '../../assets/images/femalecodertocat.png';
 import { Link } from 'react-router-dom';
 import { BACKEND_URL, PROD_URL } from '../../constants';
 import { Helmet } from 'react-helmet';
+import { readEndpoint } from 'redux-json-api';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import ReactRouterPropTypes from 'react-router-prop-types';
 
 class Signup extends React.Component {
+    static propTypes = {
+        readEndpoint: PropTypes.func.isRequired,
+        authenticated: PropTypes.bool.isRequired,
+        history: ReactRouterPropTypes.history.isRequired,
+    }
+
+    componentWillReceiveProps() {
+        if (this.props.authenticated) {
+            this.props.history.push('/profile');
+        }
+    }
+
     render() {
         return(
             <section id="hero" className="dark-bg img-bg img-bg-soft" style={{ backgroundImage: `url(${blueBg})` }}>
@@ -49,4 +66,15 @@ class Signup extends React.Component {
     }
 }
 
-export default Signup;
+const mapStateToProps = (state) => {
+    const { profile } = state;
+    return {
+        authenticated: profile.authenticated || false,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+    readEndpoint,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);
