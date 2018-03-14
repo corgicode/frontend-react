@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import TintedHeader from '../../components/misc/TintedHeader';
 import { SubmitType, ShortUserType, ChallengeType } from '../../types';
 import { Link } from 'react-router-dom';
+import linkRenderer from '../misc/linkRenderer';
 
 class SubmitDetails extends Component {
     static propTypes = {
@@ -22,11 +23,11 @@ class SubmitDetails extends Component {
                     {submission.repo && <p><strong>Repo</strong> : <Link to={ submission.repo }>{submission.repo}</Link></p>}
                     {submission.demo && <p><strong>Demo URL</strong>: <Link to={ submission.demo }>{submission.demo}</Link></p>}
                     <p><strong>Description</strong></p>
-                    <ReactMarkdown source={ submission.description } />
+                    <ReactMarkdown source={ submission.description } renderers={{ link: linkRenderer }} />
                     <p><strong>Advantage</strong></p>
-                    <ReactMarkdown source={ submission.advantage } />
+                    <ReactMarkdown source={ submission.advantage } renderers={{ link: linkRenderer }}/>
                     <p><strong>Struggle</strong></p>
-                    <ReactMarkdown source={ submission.struggle } />
+                    <ReactMarkdown source={ submission.struggle } renderers={{ link: linkRenderer }}/>
                 </div>
                 <div className="container">
                     <h3>Comments</h3>

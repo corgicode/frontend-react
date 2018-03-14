@@ -6,6 +6,8 @@ import Tags from '../misc/tags';
 import Moment from '../misc/moment';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
+import { ensureUrl } from '../../constants/utils';
+import linkRenderer from '../misc/linkRenderer';
 
 class SingleChallenge extends Component {
     static propTypes = {
@@ -67,7 +69,7 @@ class SingleChallenge extends Component {
                         <div className="grey-box">
                             <h2>Description</h2>
                             <div className="description">
-                                <ReactMarkdown source={ challenge.body.description } />
+                                <ReactMarkdown source={ challenge.body.description } renderers={{ link: linkRenderer }} />
                             </div>
                             <a className="anchor" id="attachments" />
                             <h2>Attachments</h2>
@@ -76,13 +78,14 @@ class SingleChallenge extends Component {
                                     {challenge.body.attachments.map((a, key) => (
                                         <li key={ key }>
                                             <i className="icon-install" />
-                                            <a href="{{url}}" title="{{name}}" target="_blank">
-                                                {{name}}
+                                            <a href={ ensureUrl(a.url) } title={ a.name } target="_blank">
+                                                { a.name }
                                             </a>
                                         </li>
                                     ))}
                                     {(!challenge.body.attachments || challenge.body.attachments.length < 1 ) &&
-                                        <li>This challenge does not have any attachments.</li>}
+                                        <li>This challenge does not have any attachments.</li>
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -95,7 +98,7 @@ class SingleChallenge extends Component {
                         <div className="extra-points">
                             <a className="anchor" id="extra-points" />
                             {challenge.body.extra_points &&
-                                <ReactMarkdown source={challenge.body.extra_points} />
+                                <ReactMarkdown source={challenge.body.extra_points} renderers={{ link: linkRenderer }} />
                             }
                             {!challenge.body.extra_points &&
                                 <p>The requirements are complete as is.</p>
@@ -104,7 +107,7 @@ class SingleChallenge extends Component {
                         <a className="anchor" id="technical" />
                         <h2>Technical Notes</h2>
                         <div className="technical-notes">
-                            <ReactMarkdown source={challenge.technical_notes} />
+                            <ReactMarkdown source={challenge.technical_notes} renderers={{ link: linkRenderer }} />
                             <p>When you're done, push to your repo and submit your answer.</p>
                         </div>
                         <a className="anchor" id="source" />
@@ -113,31 +116,31 @@ class SingleChallenge extends Component {
                             {challenge.source.map((s, key) => (
                                 <p key={ key }>
                                     <strong>{s.name}:&nbsp;</strong>
-                                    <a href={s.url}>{ s.url }</a>
+                                    <a href={ ensureUrl(s.url)} title={ `${challenge.title} - ${s.name}`} target="_blank">{ s.url }</a>
                                 </p>
                             ))}
                         </div>
                         <a className="anchor" id="procedure" />
                         <h2>Procedure:</h2>
                         <div className="procedure">
-                            <ReactMarkdown source={ challenge.procedure } />
+                            <ReactMarkdown source={ challenge.procedure } renderers={{ link: linkRenderer }} />
                             <p>Look at our <Link to="/learning">help</Link> section for more information about this.</p>
                         </div>
                         <a className="anchor" id="coding" />
                         <h2>Coding</h2>
                         <div className="coding">
-                            {challenge.coding && <ReactMarkdown source={ challenge.coding } />}
+                            {challenge.coding && <ReactMarkdown source={ challenge.coding } renderers={{ link: linkRenderer }} />}
                             {!challenge.coding &&
                                 <div>
                                     <p>To create your answer follow this steps:</p>
                                     <ol>
-                                        <li><a href="https://help.github.com/articles/fork-a-repo/">Fork</a>
+                                        <li><a href="https://help.github.com/articles/fork-a-repo/" target="_blank">Fork</a>
                                             the repo to your account, or download the zip file</li>
                                         <li>Solve the ticket</li>
                                         <li>Commit your code</li>
                                         <li>Push your changes</li>
-                                        <li>Publish your version in <a href="https://pages.github.com/">Github Pages</a> or
-                                            <a href="https://firebase.google.com/docs/hosting/">Firebase Hosting</a></li>
+                                        <li>Publish your version in <a href="https://pages.github.com/" target="_blank">Github Pages</a> or
+                                            <a href="https://firebase.google.com/docs/hosting/" target="_blank">Firebase Hosting</a></li>
                                         <li>Submit your response</li>
                                     </ol>
                                 </div>

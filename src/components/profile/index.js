@@ -9,6 +9,8 @@ import { PROD_URL, BACKEND_URL } from '../../constants';
 import ReactMarkdown from 'react-markdown';
 import SubmitList from '../submit/list';
 import _get from 'lodash/get';
+import linkRenderer from '../misc/linkRenderer';
+import { ensureUrl } from '../../constants/utils';
 
 class ProfileComponent extends React.Component {
     static propTypes = {
@@ -56,7 +58,7 @@ class ProfileComponent extends React.Component {
                 <section className="container profile-body" style={{ margin: '30px auto' }}>
                     <div className="row">
                         <div className="col-xs-12">
-                            <ReactMarkdown source={  _get(profile, 'profile.bio', '') } />
+                            <ReactMarkdown source={ _get(profile, 'profile.bio', '') } renderers={{ link: linkRenderer }}  />
                         </div>
                     </div>
                     {submits && submits.length > 0 &&
@@ -73,7 +75,7 @@ class ProfileComponent extends React.Component {
                             <div className="col-xs-12">
                                 {profile.projects.map((p, index) => (
                                     <div className="project" key={ index }>
-                                        <p><Link to={p.url} target="_blank">{ p.name }</Link></p>
+                                        <p><Link to={ ensureUrl(p.url) } target="_blank">{ p.name }</Link></p>
                                         <p>{ p.description }</p>
                                     </div>
                                 ))}
