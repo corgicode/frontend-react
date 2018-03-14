@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux';
 import E404 from '../404/';
 import ProfileComponent from '../../components/profile';
 import _get from 'lodash/get';
+import LoadingLarge from '../../components/loading/Large';
 
 class Profile extends React.Component {
     static propTypes = {
@@ -37,12 +38,14 @@ class Profile extends React.Component {
     }
 
     render() {
-        const { profile, self, submits } = this.props;
+        const { profile, self, submits, username } = this.props;
+
         return(
-            <div>
-                {!this.state.loading && this.props.profile && <ProfileComponent profile={profile} self={self} submits={ submits }/>}
-                {!this.state.loading && !this.props.profile && <E404 />}
-            </div>);
+            <LoadingLarge loading={ this.state.loading } title={username ? `Loading profile for ${username}` : '' }>
+                {this.props.profile && <ProfileComponent profile={profile} self={self} submits={ submits }/>}
+                {!this.props.profile && <E404 />}
+            </LoadingLarge>
+        );
     }
 }
 
