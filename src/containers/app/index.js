@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Routes from '../../routes';
@@ -23,7 +24,7 @@ class App extends React.Component {
 
     render() {
         const { profile } = this.props;
-        return(
+        return (
             <div>
                 <Header profile={profile} />
                 <Routes />
@@ -48,4 +49,4 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
     getProfile,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
