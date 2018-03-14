@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './containers/home';
 import About from './containers/about';
+import WeAreOpenSource from './containers/about/openSource';
 import Profile from './containers/profile';
 import e404 from './containers/404';
 import ProfileEdit from './containers/profile/Edit';
@@ -19,6 +20,7 @@ class Routes extends React.Component {
         return(
             <Switch>
                 <Route exact path="/" component={ Home } />
+                <Route path="/about/open-source" component={ WeAreOpenSource } />
                 <Route path="/about" component={ About } />
                 <Route path="/signup" component={ Signup } />
                 <Route path="/learning" component={ LearningPageContainer } />
