@@ -9,6 +9,7 @@ import corgiImg from '../../assets/images/team/corginson.png';
 import sydneyImg from '../../assets/images/team/sydney.png';
 import { Helmet } from 'react-helmet';
 import TeamMember from '../../components/about/TeamMember';
+import { Link } from 'react-router-dom';
 
 class About extends React.Component {
     render() {
@@ -36,7 +37,8 @@ class About extends React.Component {
                             <div className="col-sm-6 inner-right-xs inner-bottom-xs">
                                 <h2>Our Mission</h2>
                                 <p>
-                                    Codecorgi is an an open source platform to practice coding with non trivial
+                                    Codecorgi is an an <Link to="/about/open-source">open source </Link>
+                                    platform to practice coding with non trivial
                                     codebases on your own terms, for front-end developers. Showcase your code
                                     and experience. Codecorgi's vision is to help devs advance their career by providing
                                     continuous training and project experience. To help them get over the barrier
@@ -64,7 +66,7 @@ class About extends React.Component {
                                     new features you want.
                                 </p>
                                 <p>
-                                    <a href="https://github.com/corgicode/frontend-react" target="_blank">Check us out on github</a>
+                                    <Link to="/about/open-source">Learn More</Link>
                                 </p>
                                 <h2>Zero bad vibes</h2>
                                 <p>
@@ -75,6 +77,9 @@ class About extends React.Component {
                                     collaborators and learning
                                     together.
                                 </p>
+                                <p><a href="https://github.com/corgicode/frontend-react/blob/dev/CODE_OF_CONDUCT.md" target="_blank">
+                                    Check out our code of conduct
+                                </a></p>
                             </div>
                         </div>
                     </div>
