@@ -7,6 +7,8 @@ import tereImg from '../../assets/images/team/tere.png';
 import davidImg from '../../assets/images/team/david.png';
 import corgiImg from '../../assets/images/team/corginson.png';
 import sydneyImg from '../../assets/images/team/sydney.png';
+import rebeccaImg from '../../assets/images/team/iva.png';
+import kaImg from '../../assets/images/team/paul.png';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
@@ -145,6 +147,42 @@ class About extends React.Component {
                                         <p>Web Developer who values building bridges between cultures and people, creating beautiful and meaningful things, and connecting people to resources that enrich their lives.</p>
                                         <ul className="social">
                                             <li><a href="https://www.linkedin.com/in/tere-gallarreta/" target="_blank"><i className="icon-linkedin"/></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div className="col-sm-6 inner-bottom-sm ">
+                                <figure className="member">
+                                    <div className="icon-overlay icn-link">
+                                        <a><img src={rebeccaImg} className="img-circle"/></a>
+                                    </div>
+                                    <figcaption>
+                                        <h2>
+                                            Rebecca Trachtenberg
+                                            <span>Web Developer</span>
+                                        </h2>
+                                        <p> Curious and passionate fullstack developer. Venezuelan who loves philanthopy and brunch</p>
+                                        <ul className="social">
+                                            <li><a href="https://www.linkedin.com/in/rebecca-trachtenberg/" target="_blank"><i className="icon-linkedin"/></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div className="row inner-top-sm text-center">
+                            <div className="col-sm-6 inner-bottom-sm ">
+                                <figure className="member">
+                                    <div className="icon-overlay icn-link">
+                                        <a><img src={kaImg} className="img-circle"/></a>
+                                    </div>
+                                    <figcaption>
+                                        <h2>
+                                            Ka Yuen
+                                            <span>Web Developer</span>
+                                        </h2>
+                                        <p> Weill Cornell biomedical cancer researcher turned web developer. Passionate fullstack developer and life long leaner. Undercover lowkey jokester</p>
+                                        <ul className="social">
+                                            <li><a href="https://www.linkedin.com/in/kasyuen/" target="_blank"><i className="icon-linkedin"/></a></li>
                                         </ul>
                                     </figcaption>
                                 </figure>
