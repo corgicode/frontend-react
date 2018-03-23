@@ -2,6 +2,10 @@
 
 ## 0.11.0
 
+- Fixed bug that prevents back button from working 
+
+## 0.11.0
+
 - #83 Creates a <loading> component that displays while waiting for data as a generic way
 - #103 Creates utilities to verify valid urls on dynamic inputs
 - #52 Removed the odd space under the header
