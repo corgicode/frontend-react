@@ -12,7 +12,7 @@
     "gh-pages": "^1.1.0",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.1.4",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.6.1",
     "resolve-url-loader": "^2.2.1",
     "sass-loader": "^6.0.6",
     "webpack-merge": "^4.1.2"
