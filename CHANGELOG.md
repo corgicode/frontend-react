@@ -1,4 +1,6 @@
 # Changelog
+## 0.11.2
+- Added pride logos 
 
 ## 0.11.0
 
