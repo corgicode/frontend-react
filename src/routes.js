@@ -7,7 +7,7 @@ import WeAreOpenSource from './containers/about/openSource';
 import Profile from './containers/profile';
 import e404 from './containers/404';
 import ProfileEdit from './containers/profile/Edit';
-import Signup from './containers/signup';
+import Join from './containers/join';
 import SubmitFormContainer from './containers/submit/form';
 import SubmitEditContainer from './containers/submit/edit';
 import SubmitViewContainer from './containers/submit';
@@ -23,7 +23,7 @@ class Routes extends React.Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about/open-source" component={WeAreOpenSource} />
                 <Route exact path="/about" component={About} />
-                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/join" component={Join} />
                 <Route exact path="/learning" component={LearningPageContainer} />
                 <Route exact path="/challenges" component={ChallengesContainer} />
                 <Route exact path="/418" component={() => <EasterEgg type="418" />} />

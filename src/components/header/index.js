@@ -34,7 +34,7 @@ class Header extends React.Component {
     }
 
     render() {
-        const { authenticated, username } = this.props.profile;
+        const { authenticated } = this.props.profile;
 
         return (<header className="header">
             <div className="navbar">
@@ -65,7 +65,7 @@ class Header extends React.Component {
                                     <Link to="/challenges">Challenges</Link>
                                 </li>
                                 <li>
-                                    {!authenticated && <Link className="red-button" to="/signup" onClick={this.toggleVisibility}>Signup {username}</Link>}
+                                    {!authenticated && <Link className="red-button" to="/join" onClick={this.toggleVisibility}>Join</Link>}
                                     {authenticated && <Link className="red-button" to="/profile" onClick={this.toggleVisibility}>Profile</Link>}
                                 </li>
                             </ul>
