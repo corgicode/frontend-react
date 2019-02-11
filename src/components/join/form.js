@@ -1,23 +1,35 @@
+/** @jsx jsx */
 import React from 'react';
-import Link from 'Lib/buttons/Link';
+import StyledLink from 'Lib/buttons/Link';
 import blueBg from 'Images/blue-bg.jpg';
 import femaleOctocat from 'Images/femalecodertocat.png';
 import { BACKEND_URL } from 'Constants';
+import { jsx } from '@emotion/core';
+import { Link } from 'react-router-dom';
 
 class JoinForm extends React.Component {
     render() {
         return (
-            <section id="hero" className="dark-bg img-bg img-bg-soft" style={{ backgroundImage: `url(${blueBg})` }}>
+            <section css={{  backgroundImage: `url(${blueBg})` }}>
                 <div className="container inner-top-md inner-bottom-sm">
                     <div className="row">
                         <div className="col-md-5 inner-right inner-bottom-xs">
                             <header>
-                                <h1>Signup</h1>
-                                <p>Use github to create or access your account.</p>
+                                <h1>Join</h1>
+                                <p>You'll use your email to log in, your username is used when displaying submissions and comments.</p>
                                 <p>
-                                    <Link to={`${BACKEND_URL}/api/auth/github`} target="_self" css={{ fontSize: '18px', padding: '15px 35px 17px', marginTop: '35px' }}>
-                                        <i className="icon-github" />
-                                        Github Signup
+                                    <StyledLink to={`${BACKEND_URL}/api/auth/github`} css={{ fontSize: '18px', padding: '15px 35px 17px', marginTop: '35px' }}>
+                                        Submit
+                                    </StyledLink>
+                                </p>
+                                <p> Have an account?
+                                    <Link to={`${BACKEND_URL}/api/auth/github`}>
+                                        Log in
+                                    </Link>
+                                </p>
+                                <p>
+                                    <Link to={`${BACKEND_URL}/api/auth/github`}>
+                                        Forgot Password?
                                     </Link>
                                 </p>
                             </header>

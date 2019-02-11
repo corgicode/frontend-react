@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-// import React from 'react';
-// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const StyledLink = styled(Link)(

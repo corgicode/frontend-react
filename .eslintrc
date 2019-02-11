@@ -12,6 +12,7 @@
     "__DEV__": true
   },
   "rules": {
+    "emotion/jsx-import": "error",
     "no-var": 2,                     // http://eslint.org/docs/rules/no-var
     "prefer-const": 2,               // http://eslint.org/docs/rules/prefer-const
 
@@ -170,6 +171,7 @@
     "react/jsx-wrap-multilines": 2
   },
   "plugins": [
-    "react"
+    "react",
+    "emotion"
   ]
 }
