@@ -7,26 +7,31 @@ class TextField extends Component {
         meta: PropTypes.object.isRequired,
         input: PropTypes.object.isRequired,
         placeholder: PropTypes.string,
+        type: PropTypes.string,
+    }
+
+    static defaultProps = {
+        type: 'text',
     }
 
     render() {
         const { label, meta, input, placeholder } = this.props;
         return(
             <div className={ 'form-group ' + (meta.error && meta.touched && 'has-error')}>
-                <label htmlFor={ input.name }>
+                {label && <label htmlFor={ input.name }>
                     <i className={ meta.error ? 'tint-color icon-asterisk' : 'icon-ok green' } />
                     &nbsp;{ label }:
-                </label>
-                <input type="text"
+                </label>}
+                <input type={ this.props.type }
                     className="form-control"
                     onBlur={ input.onBlur }
                     onChange={ input.onChange }
                     placeholder={ placeholder }
                     value={ input.value }
                 />
-                {/* <span className="help-block">
-                    {meta.error && meta.touched && <span>{meta.error}</span>}&nbsp;
-                </span> */}
+                <p className="help-block">
+                    {meta.error && meta.touched && meta.error}
+                </p>
             </div>
         );
     }
