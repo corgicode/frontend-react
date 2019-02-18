@@ -1,5 +1,5 @@
 import React from 'react';
-import femaleOctocat from '../../assets/images/femalecodertocat.png';
+import logoSquared from 'Images/logo-squared.png';
 import { PROD_URL } from '../../constants';
 import { Helmet } from 'react-helmet';
 import { readEndpoint } from 'redux-json-api';
@@ -30,12 +30,11 @@ class SignupContainer extends React.Component {
                 <JoinForm />
                 <Helmet>
                     <title>Signup for codecorgi and build your dev profile</title>
-                    <meta property="og:type" content="business.business" />
                     <meta property="og:title" content="Signup for codecorgi and build your dev profile" />
                     <meta property="og:url" content={ `${PROD_URL}/join` } />
-                    <meta property="og:image" content={`${femaleOctocat}` } />
+                    <meta property="og:image" content={`${ logoSquared }` } />
                     <meta name="twitter:title" content="Signup for codecorgi and build your dev profile" />
-                    <meta name="twitter:image" content={`${femaleOctocat}` } />
+                    <meta name="twitter:image" content={`${ logoSquared }` } />
                 </Helmet>
             </React.Fragment>
         );
@@ -54,7 +53,6 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
-    form: 'bid',
-    enableReinitialize: true,
-    keepDirtyOnReinitialize: true,
+    form: 'join',
+    enableReinitialize: false,
 })(SignupContainer));
