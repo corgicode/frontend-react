@@ -1,7 +1,8 @@
 import _merge from 'lodash/merge';
 import _get from 'lodash/get';
-export const PROFILE_RECEIVED = 'PROFILE_RECEIVED';
 import { readEndpoint } from 'redux-json-api';
+
+export const PROFILE_RECEIVED = 'PROFILE_RECEIVED';
 
 export function receiveProfile(profile, authenticated = true) {
     return {

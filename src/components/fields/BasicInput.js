@@ -18,20 +18,38 @@ class TextField extends Component {
 
     render() {
         const { label, meta, input, placeholder } = this.props;
+
+        const inputStyle = {
+            display: 'inline-block',
+            height: 40,
+            padding: '0 10px',
+            fontSize: 16,
+            lineHeight: 25,
+            color: '#73879C',
+            resize: 'none',
+            verticalAlign: 'middle',
+            boxShadow: 'none',
+            backgroundColor: '#f5f5f5',
+            border: '1px solid #E6E9ED',
+            borderRadius: 2,
+            transition: 'all 200ms',
+            marginBottom: 1,
+        };
+
         return(
-            <div className={ 'form-group ' + (meta.error && meta.touched && 'has-error')}>
+            <div css={{ display: 'block', margin: '10px 0' }}>
                 {label && <label htmlFor={ input.name }>
                     <i className={ meta.error ? 'tint-color icon-asterisk' : 'icon-ok green' } />
                     &nbsp;{ label }:
                 </label>}
                 <input type={ this.props.type }
-                    className="form-control"
+                    css={ inputStyle }
                     onBlur={ input.onBlur }
                     onChange={ input.onChange }
                     placeholder={ placeholder }
                     value={ input.value }
                 />
-                <p className="help-block">
+                <p css={{ }}>
                     {meta.error && meta.touched && meta.error}
                 </p>
             </div>
